@@ -888,7 +888,7 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # Результат сохраните в перменную res.
 # print(str(45.56) * 2)
 
-# n = str (input("Enter a number : "))
+# n = int (input("Enter a number : "))
 # result = 0
 # while (n>0)  :
 #    result = result + n%10
@@ -905,15 +905,23 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # Пример:
 
 
-# n = 123 -> res = 6 (1 + 2 + 3)
 
-# n = 100 -> res = 1 (1 + 0 + 0)
+# n = 456
+
+# # Введите ваше решение ниже
+
+# res = ((n//100)%10)+((n//10)%10)+(n%10)
+
+# a = n%100
+
+# b = n//10
+
+# print (res)
+
 
 
 
 # n = 123
-
-# # Введите ваше решение ниже
 
 # res = 0
 # while (n>0):
@@ -921,27 +929,11 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 #    n=n//10
 # print(res)
 
-# print(f'n = {n} -> res = {res}')
-
-
-# index=0
-# while index<len(n):
-#     # print(n(index))
-#     res=res+n(index)
-#     index=index+1
 
 # print(f'n = {n} -> res = {res} ({n[0]} + {n[1]} + {n[2]})')
 
 
 
-# print(n%10)
-
-# even numbers summ 1to15
-# I = 2
-# N = 0
-# while I <= 15:
-#     N = N+I
-#     I = I+2
 
 
 
@@ -955,19 +947,76 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # Выведите через пробел количество журавликов, 
 # сделанных Петей, Катей и Сережей.
 
+# n = x + x + (x + x)*2
+# n = 2*x + 4*x
+# x = (n//6)*4
+
+# n = 60 
+
+# print (n//6, (n//6)*4, n//6)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # Вы пользуетесь общественным транспортом? Вероятно, вы расплачивались за проезд и получали билет с номером.
+# # Счастливым билетом называют такой билет 
+# с шестизначным номером, 
+# где сумма первых трех цифр равна сумме последних трех.
+# # Т.е. билет с номером 385916 – счастливый, т.к. 3+8+5=9+1+6.
+# # Вам требуется написать программу, 
+# которая проверяет счастливость билета 
+# с номером n и выводит на экран yes или no.
+
+# # Пример:
+
+# # n = 385916 -> yes
+# # n = 123456 -> no
+
+# n = str (input("Enter a number : "))
+# i=0
+# sum1=0
+# digit = int (n)
+# if digit<100000 & digit>=1000000:
+#     print(f'Enter 6 digit number {n}')
+# else:
+#     while i<len(n)/2:
+#          print(len(n))
+#          sum1=sum1+ n[i]
+#          i=i+1
+
+# print(sum1)
+
+
+
+
+
+# Определите, можно ли от шоколадки
+# размером a × b долек отломить c долек, 
+# если разрешается сделать один разлом 
+# по прямой между дольками (то есть разломить
+#  шоколадку на два прямоугольника).
+
+# Выведите yes или no соответственно.
+
 # Пример:
 
-# n = 6 -> 1 4 1  
-# n = 24 -> 4 16 4    
-# n = 60 -> 10 40 10
 
-# sum = n
-# a = x
-# b = x
-# c = y = (x + x)^2
+# a, b, c = 3, 2, 4 -> yes
+# a, b, c = 3, 2, 1 -> no
 
-# n = a + b + (a+b)^2
 
-#  n = x + x + (x + x)^2
 
-# x = n - x - (-x - x)^2
+
+

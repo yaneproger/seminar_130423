@@ -5,6 +5,9 @@
 		}
 	],
 	"settings": {
-		"editor.suggest.matchOnWordStartOnly": false
+		"editor.suggest.matchOnWordStartOnly": false,
+		"editor.defaultFormatter": null,
+        "editor.detectIndentation": false,
+        "editor.formatOnSave": true
 	}
 }
