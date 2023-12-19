@@ -911,25 +911,13 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # # Введите ваше решение ниже
 
 # res = ((n//100)%10)+((n//10)%10)+(n%10)
-
-# a = n%100
-
-# b = n//10
-
-# print (res)
-
-
-
-
+# 
 # n = 123
-
 # res = 0
 # while (n>0):
 #    res = res + n%10
 #    n=n//10
 # print(res)
-
-
 # print(f'n = {n} -> res = {res} ({n[0]} + {n[1]} + {n[2]})')
 
 
@@ -960,17 +948,8 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 
 
 
-
-
-
-
-
-
-
-
-
-
-# # Вы пользуетесь общественным транспортом? Вероятно, вы расплачивались за проезд и получали билет с номером.
+# # Вы пользуетесь общественным транспортом? Вероятно,
+#  вы расплачивались за проезд и получали билет с номером.
 # # Счастливым билетом называют такой билет 
 # с шестизначным номером, 
 # где сумма первых трех цифр равна сумме последних трех.
@@ -984,21 +963,24 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # # n = 385916 -> yes
 # # n = 123456 -> no
 
-# n = str (input("Enter a number : "))
-# i=0
-# sum1=0
-# digit = int (n)
-# if digit<100000 & digit>=1000000:
-#     print(f'Enter 6 digit number {n}')
+# n = int (input("Enter a number : "))
+# a = n//100000
+# b = (n//10000)%10
+# c = (n//1000)%10
+# d = (n//100)%10
+# e = (n//10)%10
+# f = (n%10)
+
+# if n>=1000000 or n<100000:
+#     print('enter 6 digit')
 # else:
-#     while i<len(n)/2:
-#          print(len(n))
-#          sum1=sum1+ n[i]
-#          i=i+1
 
-# print(sum1)
-
-
+#         print(a,b,c,d,e,f)
+#         if a + b + c == d + e + f:
+#             print('yes')
+#         else:
+#             print('no')
+        
 
 
 
