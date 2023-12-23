@@ -994,9 +994,234 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 
 # Пример:
 
-
 # a, b, c = 3, 2, 4 -> yes
 # a, b, c = 3, 2, 1 -> no
+
+# a = int(input("Введите кол-во долек одной стороны: "))
+# b = int(input("Введите кол-во долек другой стороны: "))
+# c = int(input("Введите кол-во долек которое нужно получить: "))
+    
+# # a = 3
+# # b = 2
+# # c = 4
+
+# # Введите ваше решение ниже
+
+# if (c % a == 0  or c % b == 0) and c < a * b : # znachenie c - doljno bit kratno - "%"
+#     # odnomu iz cisel - ili - a , ili - b
+# # to est kratno odnoi iz storon wokoladki 
+# # esli u nas wokoladka 3 na 2 , to posle razloma  polu4im ili 2 na 2,  ili 3 na 1 ,
+# # to est 4 dolki
+#     print ('yes')
+# else :
+#     print ('no')
+
+
+
+# n = int(input("Введите кол-во элементов списка: "))
+# data = []
+# for i in range(n):
+#     data.append(int(input("Введите число: ")))
+#     # insert(position, element)
+# print(data)
+
+
+
+
+# # Задача 17
+# # print([i for i in range(5)])
+# # print([(i, i ** 2) for i in range(5)])
+
+# # print([i for i in range(11) if i % 2 == 0])
+# # input() ->   "-10 23 5 4 89 23"
+# # input().split() -> ["-10", "23", "5", "4", "89", "23"]
+# # for i in input().split():
+# #     print(int(i) * 2)
+
+# # data = [int(i) for i in input("Введите числа: ").split()]
+# # print(len(set(data)))
+# data = ["-10", "23", "5", "4", "89", "23"]
+# print(" !! ".join(data))
+
+
+# k = k % len(data)
+
+
+
+# # informatics
+# # e-olymp(vpn)
+# # acmp
+
+
+# list = [1,2,3,4,5,6,7]
+# k = 2
+# n = len
+
+# if n == 0 or k%n==0
+#   shift = list
+# else:
+#  k = k%n
+#  shift = list[-k:] + list[:-k]
+
+
+
+# data = [int(i) for i in input("Введите числа: ").split()]
+# k = int(input("Введите кол-во сдвигов: ")) % len(data)
+# for i in range(k):
+#     data.insert(0, data.pop(-1))
+#     # [5, 1, 2, 3, 4] k = 2
+#     # data.pop(-1) -> 4
+#     # data.insert(0, 4)
+#     # [4, 5, 1, 2, 3]
+# print(data)
+
+
+
+# count_zero = 0
+# count_one = 0
+# for i in coins:
+#     if i == 0:
+#         count_zero += 1
+#     else:
+#         count_one += 1
+# if count_zero < count_one:
+#     print(count_zero)
+# else:
+#     print(count_one)
+
+
+
+# 21
+
+
+# Напишите программу для печати всех уникальных
+# значений в словаре.
+# Input: [{"V": "S001"}, {"V": "S002"}, {"VI": "S001"},
+# {"VI": "S005"}, {"VII": " S005 "}, {" V ":" S009 "}, {" VIII
+# ":" S007 "}]
+# Output: {'S005', 'S002', 'S007', 'S001', 'S009'}
+
+
+# data = [{"V": "S001"}, {"V": "S002"}, {"VI": "S001"},
+# {"VI": "S005"}, {"VII": "S005"}, {"V ":"S009"}, {"VIII":"S007 "}]
+# # print(data[0]["V"])
+# result = set()  # = {} dictionary
+# for d in data:
+#     for key in d:
+#         result.add(d[key])
+# print(result)
+
+
+# Дан массив, состоящий из целых чисел. Напишите
+# программу, которая подсчитает количество
+# элементов массива, больших предыдущего (элемента
+# с предыдущим номером)
+# Input: [0, -1, 5, 2, 3]
+# Output: 2 (-1 < 5, 2 < 3)
+# Примечание: Пользователь может вводить значения
+# списка или список задан изначально.
+
+# # Задача 23
+# data = [int(i) for i in input("Введите числа: ").split()]
+# result = [data[i - 1] < data[i] for i in range(1, len(data))] 
+# print(sum(result)) # складываем все элементы списка
+# # range(len(data)) = 0 1 2 3 4
+# # range(5) = 0 1 2 3 4
+
+
+
+
+
+
+
+
+# Монетки
+
+# Инструкция по использованию платформы
+
+# На столе лежат n монеток. 
+# Некоторые из монеток лежат вверх решкой, 
+# а некоторые – гербом. 
+# Ваша задача - определить минимальное количество монеток, 
+# которые нужно перевернуть, 
+# чтобы все монетки лежали одной и той же стороной вверх.
+
+# Входные данные:
+
+# На вход программе подается список coins, 
+# где coins[i] равно 0, если i-я монетка лежит гербом вверх,
+# и равно 1, если i-я монетка лежит решкой вверх. 
+# Размер списка не превышает 1000 элементов.
+
+# Выходные данные:
+
+# Программа должна вывести одно целое число - 
+# - минимальное количество монеток, которые нужно перевернуть.
+
+# Пример использования 
+# На входе:
+
+# coins = [0, 1, 0, 1, 1, 0]
+# На выходе:
+
+# 3
+# coins = [int(i) for i in input("Введите числа: ").split()]
+# print(coins)
+
+# sum1=0
+# sum2=0
+# i=0
+
+# for i in range(0, len(coins)):
+#     print (f'len(coins) {len(coins)}')
+
+#     if coins[i]==0:
+#                     #  sum1=sum1+1
+#                      sum1+=1
+#                      print(f'sum1 {sum1}')
+#     else :
+#      if coins[i]==1:
+#                     sum2+=1
+#                     # sum2=sum2+1
+#                     print(f'sum2 {sum2}')
+
+# if (sum1==len(coins) or sum2==len(coins) ):
+#       print (f'Zero {0}')
+# else:      
+#     if sum1<sum2:
+#         print (f'Rsum1 {sum1}') 
+
+#     else:
+#         if  sum1>sum2:  print (f'Rsum2 {sum2}')
+
+#         else:  print (f'sum1=sum2 {sum1}') 
+
+
+
+
+# Петя и Катя – брат и сестра. 
+# Петя – студент, а Катя – школьница. 
+# Петя помогает Кате по математике.
+# Он задумывает два натуральных числа X и Y (X,Y≤1000), 
+# а Катя должна их отгадать. Для этого Петя делает две подсказки. 
+# Он называет сумму этих чисел S и их произведение P. 
+# Помогите Кате отгадать задуманные Петей числа.
+# Примечание: числа S и P задавать не нужно, 
+# они будут передаваться в тестах. 
+# В результате вы должны вывести 
+# все возможные пары чисел X и Y через пробел, 
+# такие что X <= Y.
+
+# Пример
+
+# На входе:
+
+# s = 12
+# p = 27
+# На выходе:
+
+# 3 9
+
 
 
 
