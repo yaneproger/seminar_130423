@@ -1,13 +1,13 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"editor.suggest.matchOnWordStartOnly": false,
-		"editor.defaultFormatter": null,
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "editor.suggest.matchOnWordStartOnly": false,
+        "editor.defaultFormatter": null,
         "editor.detectIndentation": false,
-        "editor.formatOnSave": true
-	}
+        "editor.formatOnSave": false
+    }
 }
