@@ -1313,26 +1313,6 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # k = 'ноутбук'
 # # # 12
 
-# list_1 = [1, 4, 3, 7, 8, 9, 2]
-# k = 8
-
-# data = [str(i) for i in input("Введите числа: ").split()]
-# print(data)
-
-
-# for i in range(len(list_1)):
-#     if list_1[i] == k:
-#         res = list_1[i]
-#     else:
-#         if list_1[i] == k+1 or list_1[i] == k-1:
-#             res1 = list_1[i]
-# if k == res:
-#     res = res
-# else:
-#     res = res1
-
-# print(res)
-
 
 # n = int(input("Введите кол-во элементов списка: "))
 # data = []
@@ -1352,13 +1332,21 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # print(data[0]["A, E, I, O, U, L, N, S, T, R"])
 
 wordsCost = 0
-wordsdict = {}
+# wordsdict = {}
 # print(type(wordsdict))
+word = []
+# print(type(word))
+# k = 'ноутбук'
+k = 'lizard'
+a = k.upper()
+# print(a)
+for i in a:
+    print(i)
+    word.append(i)
+# print(word)
+# k = [str(i.capitalize()) for i in input("Введите числа: ").split()]
 
-k = [str(i.capitalize()) for i in input("Введите числа: ").split()]
-print(k)
-
-wordsdict = {"A": "1", "E": "1", "O": "1", "U": "1", "L": "1", "N": "1",
+wordsdict = {"A": "1", "E": "1", "I": "1", "O": "1", "U": "1", "L": "1", "N": "1",
              "S": "1", "T": "1", "R": "1", "D": "2", "G": "2", "B": "3",
              "C": "3", "M": "3", "P": "3", "F": "4", "H": "4", "V": "4",
              "W": "4", "Y": "4", "K": "5", "J": "8", "X": "8", "Q": "10", "Z": "10",
@@ -1376,17 +1364,13 @@ wordsdict = {"A": "1", "E": "1", "O": "1", "U": "1", "L": "1", "N": "1",
 
              }
 # print(type(wordsdict))
-for el in k:
+for el in word:
     if el in wordsdict:
-
+        print(el)
         # print(wordsdict.get(el))
-
         temp = int(wordsdict.get(el))
         # print(temp)
-
         wordsCost = wordsCost + temp
-
-
 print(wordsCost)
 
 
