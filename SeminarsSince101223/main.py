@@ -1483,30 +1483,35 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 
 # arr = [2, 4, 10, 4, 2]
 
-# arr = [10, 8, 6, 4, 2]
+arr = [1001, 8, 6, 4, 2]
 # На выходе:
 
 
-# data = set({})
-# # print(type(arr))
-# # i = 0
-# # print(len(arr)+1)
-# # 19
-# for i in range(3):
-#     # print(arr)
+data = set({})
+# print(type(arr))
+# i = 0
+# print(len(arr)+1)
+# 19
+i = 0
+if arr[i] >= 1 and arr[i] <= 1000 and len(arr) <= 1000:
 
-#     arr.insert(0, arr.pop(-1))
-#     # print(arr)
+    for i in range(3):
+        # print(arr)
 
-#     for i in range(len(arr)-2):
+        arr.insert(0, arr.pop(-1))
+        # print(arr)
 
-#         sum = arr[i]+arr[i+1]+arr[i+2]
-#         # print(sum)
-#         data.add(sum)
+        for i in range(len(arr)-2):
 
-# # print(data)
-# print(max(data))
+            sum = arr[i]+arr[i+1]+arr[i+2]
+        # print(sum)
+            data.add(sum)
 
+# print(data)
+
+    print(max(data))
+else:
+    print('element size >1000')
 
 # while i <= 1000:
 
