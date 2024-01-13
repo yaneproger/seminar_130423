@@ -1,13 +1,17 @@
 {
-    "folders": [
-        {
-            "path": "."
-        }
-    ],
-    "settings": {
-        "editor.suggest.matchOnWordStartOnly": false,
-        "editor.defaultFormatter": null,
-        "editor.detectIndentation": false,
-        "editor.formatOnSave": false
+  "folders": [
+    {
+      "path": "."
     }
+  ],
+  "settings": {
+    "editor.suggest.matchOnWordStartOnly": false,
+    "editor.defaultFormatter": null,
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": false
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": []
+  }
 }

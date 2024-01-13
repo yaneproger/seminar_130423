@@ -1313,83 +1313,56 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # k = 'ноутбук'
 # # # 12
 
-
-# n = int(input("Введите кол-во элементов списка: "))
-# data = []
-# for i in range(n):
-#     data.append(str(input("Введите число: ")))
-#     # insert(position, element)
-# print(data)
-
-
-# print(" !! ".join(data))
-
-# A, E, I, O, U, L, N, S, T, R – 1
-
-# data = [{"A, E, I, O, U, L, N, S, T, R": "1"}, {"V": "S002"}, {"VI": "S001"},
-#         {"VI": "S005"}, {"VII": "S005"}, {"V ": "S009"}, {"VIII": "S007 "}]
-
-# print(data[0]["A, E, I, O, U, L, N, S, T, R"])
-
-# wordsCost = 0
-# # wordsdict = {}
-# # print(type(wordsdict))
-# word = []
+# # word = []
 # # print(type(word))
-# # k = 'ноутбук'
-# k = 'lizard'
-# a = k.upper()
+# # k = 'lizard'
+# # a = k.upper()
 # # print(a)
-# for i in a:
-#     print(i)
-#     word.append(i)
+# # k = [str(i.upper()) for i in input("Введите slovo: ")]
+# print(k)
+# # k = 'ноутбук'
+# # k = input("Введите slovo: ").upper()
+# print(type(k))
+# wordsCost = 0
+# # for i in k:
+# #     print(i)
+# #     word.append(i)
 # # print(word)
-# # k = [str(i.capitalize()) for i in input("Введите числа: ").split()]
+# # print(type(word))
 
 # wordsdict = {"A": "1", "E": "1", "I": "1", "O": "1", "U": "1", "L": "1", "N": "1",
 #              "S": "1", "T": "1", "R": "1", "D": "2", "G": "2", "B": "3",
 #              "C": "3", "M": "3", "P": "3", "F": "4", "H": "4", "V": "4",
 #              "W": "4", "Y": "4", "K": "5", "J": "8", "X": "8", "Q": "10", "Z": "10",
-
 #              "А": "1", "В": "1", "Е": "1", "И": "1", "Н": "1", "О": "1",
 #              "Р": "1", "С": "1", "Т": "1",
 #              "Д": "2", "К": "2", "Л": "2", "М": "2", "П": "2", "У": "2",
 #              "Б": "3", "Г": "3", "Ё": "3", "Ь": "3", "Я": "3",
-
 #              "Й": "4", "Ы": "4",
-
 #              "Ж": "5", "З": "5", "Х": "5", "Ц": "5", "Ч": "5",
 #              "Ш": "8", "Э": "8", "Ю": "8",
 #                             "Ф": "10", "Щ": "10", "Ъ": "10"
-
 #              }
-# # print(type(wordsdict))
-# for el in word:
-#     if el in wordsdict:
-#         print(el)
-#         # print(wordsdict.get(el))
-#         temp = int(wordsdict.get(el))
-#         # print(temp)
-#         wordsCost = wordsCost + temp
+# print(type(wordsdict))
+
+# data = {"A, E, I, O, U, L, N, S, T, R, А, В, Е, И, Н, О, Р, С, Т": 1,
+#         "D, G, Д, К, Л, М, П, У": 2,
+#         "B, C, M, P, Б, Г, Ё, Ь, Я": 3,
+#         "F, H, V, W, Y, Й, Ы": 4,
+#         "K, Й, Ы": 5,
+#         "J, X Ш, Э, Ю": 8,
+#         "Ф, Щ, Ъ Q, Z": 10
+#         }
+# print(type(data))
+
+# for el in k:
+#     for key in data:
+#         if el.upper() in key:
+#             #   if el in wordsdict:
+#           # print(el)
+#           # wordsCost = wordsCost + int(wordsdict.get(el))
+#             wordsCost = wordsCost + int(data[key])
 # print(wordsCost)
-
-
-# А, В, Е, И, Н, О, Р, С, Т – 1 очко;
-# Д, К, Л, М, П, У – 2 очка;
-# Б, Г, Ё, Ь, Я – 3 очка;
-# Й, Ы – 4 очка;
-# Ж, З, Х, Ц, Ч – 5 очков;
-# Ш, Э, Ю – 8 очков;
-# Ф, Щ, Ъ – 10 очков.
-
-
-# A, E, I, O, U, L, N, S, T, R – 1 очко;
-# D, G – 2 очка
-# B, C, M, P – 3 очка;
-# F, H, V, W, Y – 4 очка;
-# K – 5 очков;
-# J, X – 8 очков;
-# Q, Z – 10 очков.
 
 
 # Пересечение двух неупорядоченных наборов целых чисел
@@ -1403,38 +1376,18 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # Затем подаются элементы каждого множества
 # через пробел в виде строки. ! Писать input() не надо
 
-# Пример
-
-# На входе:
-
 # var1 = '5 4'  # количество элементов первого и второго множества
-# var2 = '222 8 1 3 5 99 7 9'  # элементы первого множества через пробел
-# var3 = '222 8 2 99 3 4 5'  # элементы второго множества через пробел
-# # На выходе:
-
-# # 3 5
-
+# var2 = '222 8 1 345 5 99 7 9'  # элементы первого множества через пробел
+# var3 = '222 8 2 99 345 4 5'  # элементы второго множества через пробел
 # r2 = {int(i) for i in var2.split()}
 # r3 = {int(i) for i in var3.split()}
-
 # var4 = {}
-# # r2 = var2.replace(' ', ',')
-# # r3 = var3.replace(' ', ',')
-
 # print(r2)
 # print(r3)
-
 # for element in r2:
-#     # print(f'for-el{element}')
-#     # print(frequency_dict)
 #     if element in r3:
-#         # print(element, end=' ')
 #         var4[element] = element
-#         # print(f'if-el{element}')
 # print(var4)
-
-# # var4 = sorted(var4)
-
 # for el in sorted(var4):
 #     print(el, end=' ')
 
@@ -1519,3 +1472,338 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 
 
 # print(sum)
+
+# arr=[1, 2, 3, 4, 5, 6, 7, 8]
+
+# SelectionSort - from grokhing algoritms book p58
+
+# def FindSmallest(arr):
+#     smallest = arr[0]
+#     smallest_index = 0
+#     for i in range(1, len(arr)):
+#         if arr[i] < smallest:
+#             smallest = arr[i]
+#             smallest_index = i
+#     return smallest_index
+
+
+# def SelectionSort(arr):
+#     resultarr = []
+#     for i in range(len(arr)):
+#         smallest = FindSmallest(arr)
+#         resultarr.append(arr.pop(smallest))
+#     return resultarr
+
+
+# print(SelectionSort([31, 23, 35, 49, 50, 6, 7, 8]))
+
+
+# def count(i):
+#     if i <= 0:
+#         return
+#     print(f'i-1:{i}')
+#     count(i-1)
+#     print(f'i-2:{i}')
+
+
+# i = 10
+# count(i)
+
+# arr = [11, 22, 31, 45]
+# print(len(arr))
+
+# print(arr)
+
+# summ = 0
+
+
+# def sum(arr):
+
+#     if arr == []:
+#         return 0
+#     else:
+#         print(len(arr))
+
+#         summ = summ+sum(arr[len(arr)-1])
+
+#         # summarr = summarr+sum(arr[len(arr)-1])
+
+#     # return summarr
+
+
+# print(sum(arr))
+
+
+# Задача №33. Общее обсуждение
+# Хакер Василий получил доступ к классному журналу
+# и хочет заменить все свои минимальные оценки на
+# максимальные. Напишите программу, которая заменяет
+# оценки Василия, но наоборот:
+# все максимальные – на минимальные.
+# Input: 5 -> 1 3 3 3 4 Output: 1 3 3 3 1
+
+# marks = [int(i) for i in input("Введите оценки: ").split()]
+# print(*[min(marks) if i == max(marks) else i for i in marks])
+# min(marks)  # -  поиск минимального числа списка
+# max(marks)  # -  поиска максимального числа списка
+
+
+# data = [int(i) for i in input("Введите числа: ").split()]
+# print([min(data) if i == max(data) else i for i in data])
+
+# print([min(data) if i == max(data) else data for i in data])
+
+# for i in range(len(data)):
+#     if data[i] == max(data):
+#         data[i] = min(data)
+# print(data)
+
+
+# def maximum(data):
+#     maxel = data[0]
+#     for i in range(len(data)):
+#         if data[i] > maxel:
+#             maxel = data[i]
+#     return maxel
+
+
+# def minimum(data):
+#     minel = data[0]
+#     for i in range(len(data)):
+#         if data[i] < minel:
+#             minel = data[i]
+#     return minel
+
+
+# for i in range(len(data)):
+#     print(data[i])
+#     if data[i] == maximum(data):
+#         data[i] = minimum(data)
+# print(data)
+
+
+# Задача №35. Решение в группах
+# Напишите функцию, которая принимает
+# одно число и проверяет, является ли
+# оно простым Напоминание: Простое число - это число,
+# которое имеет 2 делителя: 1  и n(само число)
+# Input: 5 Output: yes
+
+# def is_prime(n):
+#     for i in range(2, n // 2 + 1):
+#         if n % i == 0:
+#             return 'no'
+#     return 'yes'
+
+# print(is_prime(int(input("Введите число: "))))
+
+
+# Задача №37. Решение в группах 15 минут
+# Дано натуральное число N и последовательность
+# из N элементов. Требуется вывести эту последовательность
+# в обратном порядке. Примечание. В программе запрещается
+# объявлять массивы и использовать циклы (даже для ввода и вывода).
+# Input:    2 -> 3 4 Output: 4 3
+
+# N = int(input("Введите число: "))
+
+
+# def recursion(n):
+#     if n <= 0:
+#         return "zero"
+
+#     print(n)
+
+#     return print(recursion(((n)+2)-1))
+
+
+# print(recursion(N))
+# # b = input("Введите число: ")
+# c = input("Введите число: ")
+
+
+# Напишите функцию f, которая на вход
+# принимает два числа a и b, и возводит
+# число a в целую степень b с помощью рекурсии.
+
+# Функция не должна ничего выводить, только
+# возвращать значение.
+
+# Пример:
+
+# a = 3; b = 5 -> 243 (3⁵)
+# a = 2; b = 3 -> 8
+
+# Введите ваше решение ниже
+
+# a = 2
+# b = 3
+
+
+# def f(a, b):
+
+#     if b == 0:
+#         return a**0
+
+#     return a*f(a, b-1)
+
+
+# print(f(a, b))
+
+
+# def square(a, b):
+#     res = 1
+#     for i in range(b):
+#         res = res*a
+#     return res
+
+
+# print(square(2, 2))
+
+
+# Напишите рекурсивную функцию sum(a, b),
+# возвращающую сумму двух целых неотрицательных чисел.
+# Из всех арифметических операций допускаются только +1 и -1.
+# Также нельзя использовать циклы.
+
+# Функция не должна ничего выводить, только возвращать значение.
+
+# Пример:
+
+
+# sum(2, 2)
+# # 4
+
+a = 1
+b = 4
+
+
+def sum(a, b):
+
+    if b == 0:
+        return a
+
+    return a+sum(a, b-1)
+
+
+print(sum(a, b))
+
+
+# Seminar 6     ******************************************************************
+
+# Задача №39. Решение в группах Даны два массива чисел.
+# Требуется вывести те элементы первого массива
+# (в том порядке, в каком они идут в первом массиве),
+# которых нет во втором массиве. Пользователь вводит
+# число N - количество элементов в первом массиве,
+# затем N чисел - элементы массива. Затем число M - количество
+# элементов во втором массиве. Затем элементы второго массива
+# Ввод: Вывод: 7 3 3 2 12 3 1 3 4 2 4 12 6 4 15 43 1 15 1
+
+
+# Задача №39. Решение в группах Даны два массива чисел. Требуется вывести те элементы первого массива
+# (в том порядке, в каком они идут в первом массиве), которых нет во втором массиве. Пользователь вводит
+# число N - количество элементов в первом массиве, затем N чисел - элементы массива. Затем число M -
+# количество элементов во втором массиве. Затем элементы второго массива
+
+
+# print([i**2 if i % 2 != 0 else 0 for i in sp])
+
+# sp1 = [3, 1, 3, 4, 2, 4, 12]
+# sp2 = [4, 15, 43, 1, 15, 1]
+
+# print([i for i in sp1 if i not in sp2])
+# print([i for i in sp1 if i not in set(sp2)])
+
+
+# Задача №41. Решение в группах Дан массив, состоящий из целых чисел. Напишите программу,
+# которая в данном массиве определит количество элементов, у которых два соседних и, при этом,
+# оба соседних элемента меньше данного. Сначала вводится число N — количество элементов в массиве
+# Далее записаны N чисел — элементы массива. Массив состоит из целых чисел.
+
+
+# def find_champ(sp, index):
+#     if sp[index] > sp[index+1] and sp[index] > sp[index-1]:
+#         return True
+#     return False
+
+
+# def find_champ2(sp, index):
+#     if sp[index] > sp[(index+1) % len(sp)] and sp[index] > sp[index-1]:
+#         return True
+#     return False
+
+
+# sp1 = [1, 2, 3, 4, 5]  # 0
+
+# print(sum([1 for i in range(len(sp1)-1) if find_champ(sp1, i)]))
+
+# sp1 = [1, 5, 1, 5, 1]  # 2
+
+# print(sum([1 for i in range(len(sp1)-1) if find_champ(sp1, i)]))
+
+# # закольцовываем список
+
+# sp1 = [1, 2, 3, 4, 5]  # 1
+
+# print(sum([1 for i in range(len(sp1)) if find_champ2(sp1, i)]))
+
+
+# Задача №43. Решение в группах Дан список чисел. Посчитайте,
+# сколько в нем пар элементов, равных друг другу. Считается,
+# что любые два элемента, равные друг другу образуют одну пару,
+# которую необходимо посчитать. Вводится список чисел. Все числа
+# списка находятся на разных строках. Ввод: Вывод: 1 2 3 2 3 2
+
+
+# sp1 = [1, 2, 3, 4, 5]  # 1
+
+# sp = [1, 2, 3, 2, 3, 3, 3, 3]  # 2
+
+# print(sp.count(3))
+# print(sum([1 for i in sp if sp.count(i) % 2 == 0]) / 2)
+# print(sum([sp.count(i) // 2 for i in set(sp)]))
+
+
+# Задача №45. Решение в группах
+# Два различных натуральных числа n и m называются дружественными,
+# если сумма делителей числа n (включая 1, но исключая само n)
+# равна числу m и наоборот. Например, 220 и 284 – дружественные числа.
+# По данному числу k выведите все пары дружественных чисел, каждое
+# из которых не превосходит k. Программа получает на вход одно натуральное число k,
+# не превосходящее 105. Программа должна вывести  все пары дружественных чисел,
+# каждое из которых не превосходит k. Пары необходимо выводить по одной в строке,
+# разделяя пробелами. Каждая пара должна быть выведена только один раз
+# (перестановка чисел новую пару не дает). Ввод: Вывод: 300 220 284
+
+
+# def summa_dels(num):
+#     res = 0
+#     for i in range(1, num):
+#         if num % i == 0:
+#             res += i
+#     return res
+
+
+# k = int(input("До какого числа будем анализировать "))
+
+# res = []
+
+# for m in range(1, k+1):
+#     n = summa_dels(m)
+#     if summa_dels(n) == m and n > m:
+#         res.append((n, m))
+
+# print(res)
+
+
+# print([(m, n) for m in range(1, k+1) if summa_dels(n := summa_dels(m)) == m and n > m])
+
+# print([(m, n) for m in range(1, k+1) if summa_dels(n := summa_dels(m)) == m and n > m])
+
+
+# print([(m, summa_dels(m)) for m in range(1, k+1)
+#       if summa_dels(summa_dels(m)) == m and summa_dels(m) > m])
+
+
+# ***************************************************************************************
