@@ -1987,33 +1987,7 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # print(evenpairs(list))
 
 
-# ************************************************
-
-
-# **********************************
-# семинары  Урок 7. Функции высшего порядка
-
-
-# У вас есть код, который вы не можете менять (так часто бывает, когда код в глубине
-# программы используется множество раз и вы не хотите ничего сломать):
-# transformation = <???>
-# values = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29] # или любой другой список
-# transormed_values = list(map(transformation, values))
-# Единственный способ вашего взаимодействия с этим кодом - посредством задания
-# функции transformation.
-# Однако вы поняли, что для вашей текущей задачи вам не нужно никак преобразовывать
-# список значений, а нужно получить его как есть.
-# Напишите такое лямбда-выражение transformation, чтобы transformed_values получился
-# копией values.
-
-
-# values = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
-# # или любой другой список
-# transormed_values = list(map(transformation, values))
-
-
-# def transformation(x): return x*2
-
+# reduce , enumerate
 
 # Ниже представлен пример лямбда-функции,
 # удваивающей вводимое значение.
@@ -2029,6 +2003,34 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # которое вычисляется и возвращается.
 
 
+# ************************************************
+
+
+# **********************************
+# семинары  Урок 7. Функции высшего порядка
+
+
+# Задача №47.
+# У вас есть код, который вы не можете менять (так часто бывает, когда код в глубине
+# программы используется множество раз и вы не хотите ничего сломать):
+# transformation = <???>
+# values = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29] # или любой другой список
+# transormed_values = list(map(transformation, values))
+# Единственный способ вашего взаимодействия с этим кодом - посредством задания
+# функции transformation.
+# Однако вы поняли, что для вашей текущей задачи вам не нужно никак преобразовывать
+# список значений, а нужно получить его как есть.
+# Напишите такое лямбда-выражение transformation, чтобы transformed_values получился
+# копией values.
+
+# transformation=lambda x: x * 1
+# values = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+# # # или любой другой список
+# transormed_values = list(map(lambda x: x * 1, values))
+# print(transormed_values)
+
+
+# Задача №49.
 # Планеты вращаются вокруг звезд по эллиптическим орбитам.
 # Назовем самой далекой планетой ту, орбита которой имеет
 # самую большую площадь. Напишите функцию
@@ -2055,8 +2057,8 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 
 
 # def find_farthest_orbit(orbits):
-#     list_square = [(i[0] != i[1]) * i[0] * i[1] for i in orbits]
-#     return orbits[list_square.index(max(list_square))]
+#     squares_list = [(i[0] != i[1]) * i[0] * i[1] for i in orbits]
+#     return orbits[squares_list.index(max(squares_list))]
 
 
 # orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
@@ -2064,16 +2066,29 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # print(find_farthest_orbit(orbits))
 
 
+# Задача №51. Решение в группах Напишите функцию
+# same_by(characteristic, objects), которая проверяет,
+# все ли объекты имеют одинаковое значение некоторой
+# характеристики, и возвращают True, если это так. Если
+# значение характеристики для разных объектов отличается
+# - то False. Для пустого набора объектов, функция должна
+# возвращать True. Аргумент characteristic - это функция,
+# которая принимает объект и вычисляет его характеристику.
+# Ввод:  values = [0, 2, 10, 6]
+# if same_by(lambda x: x % 2, values):
+#     print(‘same’)
+#           else: print(‘different’)
+
+# Вывод:  same
+
 # def same_by(characteristic, objects):
 #     return len(set(list(map(characteristic, objects)))) in (0, 1)
-
 
 # values = [3, 6, 9, 12, 15, 16]
 # if same_by(lambda x: x % 3, values):
 #     print('same')
 # else:
 #     print('different')
-
 
 # *****************************************
 
@@ -2090,15 +2105,18 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # def greeting(greet):
 #     return lambda name: f" {name}, {greet} !"
 
-
+# privet = greeting('privet')
 # morning_greeting = greeting("Good Morning")
-# morning_greeting = greeting("Good Morning")
-# # print(morning_greeting('Bogdan'), ('good'), ('work'))
+# print(morning_greeting('Bogdan'), ('good'), ('work'))
 # print(morning_greeting(1))
+# print(privet('Eldar'))
 
+
+# evening_greeting = greeting("Good Evening")
 # print(evening_greeting('Bogdan'))
 
 # ****************************************
+
 
 # print_operation_table
 
@@ -2135,3 +2153,368 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # 1 2 3
 # 2 4 6
 # 3 6 9
+
+
+# Задача 34:
+# Винни-Пух попросил Вас посмотреть,
+# есть ли в его стихах ритм. Поскольку
+# разобраться в его кричалках не настолько просто,
+# насколько легко он их придумывает, Вам стоит написать
+# программу. Винни-Пух считает, что ритм есть, если число
+# слогов (т.е. число гласных букв) в каждой фразе стихотворения
+# одинаковое. Фраза может состоять из одного слова, если во фразе
+# несколько слов, то они разделяются дефисами. Фразы отделяются
+# друг от друга пробелами. Стихотворение  Винни-Пух вбивает в
+# программу с клавиатуры. В ответе напишите “Парам пам-пам”,
+# если с ритмом все в порядке и “Пам парам”, если с ритмом
+# все не в порядке
+
+# Ввод:
+# пара-ра-рам рам-пам-папам па-ра-па-дам
+# Вывод:
+# Парам пам-пам
+
+
+# stroka = 'за-гад-ка-ра-свет-ка-ра-газ-да-не-на-ма-ли-ва-ла'
+# Ожидаемый ответ:Количество фраз должно быть больше одной!
+
+# stroka = 'со-лнце-гре-ет ве-сной'
+# Ожидаемый ответ:Пам парам
+
+# stroka = 'Пух'
+# Ожидаемый ответ:Количество фраз должно быть больше одной!
+
+# stroka = 'по-русски говорят'
+# Ожидаемый ответ:Парам пам-пам
+
+# stroka = 'мо-локо и мёд'
+# Ожидаемый ответ:Пам парам
+
+# stroka = 'как ве-тер сме-ёт лис-ти'
+# Ожидаемый ответ:Пам парам
+
+#  Гласных букв - десять: «а» «у» «о» «и» «э» «ы» «я» «ю» «е» «ё».
+
+
+# stroka = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
+
+
+# def RythmCount(str):
+#     # print(f'len{len(str.split())}')
+#     data = []
+#     if len(str.split()) <= 1:
+#         print('Количество фраз должно быть больше одной!')
+#     else:
+#         # print(str)
+#         for s in str.split():
+#             # print(s)
+#             res1 = sum(
+#                 map(s.count, ['а', 'е', 'о', 'й', 'ю', 'у', 'э', 'ё', 'и', 'ы', 'я']))
+#             # print(res1)
+#             data.append(res1)
+#         # print(data)
+
+#         if min(data) % 2 == 0 or sum(data) % 2 == 0:
+#             print('Парам пам-пам')
+#         else:
+#             print('Пам парам')
+
+
+# RythmCount(stroka)
+
+
+# https://colab.research.google.com/drive/1nfapiAATvu4A-xpJPxEB1KuyKivpkH-w?usp=sharing
+
+
+# Определить среднюю стоимость дома
+
+# Дан файл california_housing_train.csv.
+# Определить среднюю стоимость дома ,
+# где количество людей от 0 до 500
+# (population) и сохранить ее в переменную avg.
+# Используйте модуль pandas.
+
+# Введите ваше решение ниже
+
+# import pandas as pd
+# df = pd.read_csv('california_housing_train.csv')
+# df.head() # первые 5 строк
+
+# avg=df[(df['population'] > 0) & (df['population']<= 500) ]['median_house_value'].mean()
+
+# avg=df.loc[(df['population'] > 0) & (df['population'] <= 500)], df['median_house_value'].median
+
+# df[(df['population'] > 0) & (df['population']<= 500) ]['median_house_value'].median()
+
+
+# Максимальная households
+
+# Дан файл california_housing_train.csv.
+# Найти максимальное значение переменной
+# "households" в зоне минимального
+# значения переменной min_population
+# и сохраните это значение в переменную
+# max_households_in_min_population.
+# Используйте модуль pandas.
+
+# Введите ваше решение ниже
+
+# import pandas as pd
+# df = pd.read_csv('california_housing_train.csv')
+# # df.head() # первые 5 строк
+# # df[df['population'] == df['population'].min()] ['households'].max()
+# max_households_in_min_population=df[df['population'] == df['population'].min()] ['households'].max()
+
+#
+
+#
+
+#
+
+
+#  #   Генераторы
+
+#  Вывести числа 1 списка, которых нет во 2-ом
+
+# sp1 = [3, 1, 3, 4, 2, 4, 12]
+# sp2 = [4, 15, 43, 1, 15, 1]
+
+# print([i for i in sp1 if i not in sp2])
+
+# print([i for i in sp1 if i not in set(sp2)])
+
+
+#  # Найти число в списке, которое одновременно больше Обеих соседних
+
+# sp = [1, 5, 1, 5, 1, 2, 3, 4, 5, 4]
+# sp = [1, 2, 3, 4, 5]
+
+
+# print(sum([1 for i in range(len(sp)-1) if sp[i] > sp[i+1] and sp[i] > sp[i-1]]))
+
+
+# def MaxDigit(sp, index):
+#     if sp[index] > sp[index+1] and sp[index] > sp[index-1]:
+#         return True
+#     return False
+
+# print(sum([1 for i in range(len(sp)-1) if MaxDigit(sp, i)]))
+
+# #  loop the list -  закольцовываем список для index+1
+
+#  #   чтобы в списке  sp = [1, 2, 3, 4, 5],определить число 5 ,
+# как большее между 1-м элементом и предпоследним элементом массива
+
+# sp = [1, 5, 1, 5, 1, 2, 3, 4, 5, 4]
+# sp = [1, 2, 3, 4, 5]
+
+
+# def MaxDigit(sp, index):
+#     if sp[index] > sp[(index+1) % len(sp)] and sp[index] > sp[index-1]:
+#         return True
+#     return False
+
+
+# print(sum([1 for i in range(len(sp)) if MaxDigit(sp, i)]))
+
+# sp = [1, 2, 3, 2, 3, 2, 3, 1, 2, 3, 2, 1]
+
+
+# print(sum([1/2 for i in sp if sp.count(i) > 1])//2)  # ne pravilnoe
+
+# print(sum([sp.count(i)//2 for i in set(sp)]))
+
+
+# Задача
+
+
+# print_operation_table
+
+
+# Напишите функцию print_operation_table(operation,
+# num_rows, num_columns),
+# которая принимает в качестве аргумента функцию,
+# вычисляющую элемент по номеру строки и столбца.
+# По умолчанию номер столбца и строки = 9.
+
+# Аргументы num_rows и num_columns
+# указывают число строк и столбцов таблицы,
+# которые должны быть распечатаны.
+
+# Нумерация строк и столбцов идет с единицы (подумайте, почему не с нуля).
+
+# Если строк меньше двух, выдайте текст
+# ОШИБКА! Размерности таблицы должны быть больше 2!.
+
+# Примечание: бинарной операцией называется любая операция,
+# у которой ровно два аргумента, как, например, у операции умножения.
+
+# Между элементами должен быть 1 пробел, в конце строки пробел не нужен.
+
+# Пример
+
+# На входе:
+
+
+# print_operation_table(lambda x, y: x * y, 3, 3)
+# На выходе:
+
+
+# 1 2 3
+# 2 4 6
+# 3 6 9
+
+# def operation(x, y):
+#     return lambda x, y: x * y
+
+
+# num_rows = 3
+# num_columns = 3
+
+
+# def print_operation_table(function, num_rows, num_columns):
+#     massive = []
+#     for i in range(num_rows):
+#         for j in range(num_columns):
+#             massive[i][j] = function(i, j)
+#     return massive
+
+
+# def operation(x, y):
+#     return lambda x, y: x * y
+# a = operation(3, 3)
+
+
+# def function(x, y):
+#     return x * y
+
+
+# def arr_el(count):
+#     count = range(1, count)
+#     return count
+
+
+# def print_operation_table(function, num_rows, num_columns):
+
+#     arr = [[function(num_rows, num_columns) for i in range(1, num_rows)]
+#            for j in range(1, num_columns)]
+#     # print(arr)
+#     for row in arr:
+#         print(*row)
+#     print()
+
+
+# print_operation_table(lambda x, y: x * y, 9, 9)
+
+
+# def print_operation_table1(function, num_rows, num_columns):
+#
+#     # arr = [[function(j, i) for i in range(1, num_rows-1)]
+#     #        for j in range(1, num_columns-1)]
+
+#     for i in range(1, num_rows-2):
+#         print()
+#         for j in range(1, num_columns-2):
+#  print(arr[i][j], end=" | ")
+
+
+# print_operation_table(lambda x, y: x * y, 3, 3)
+
+
+# def print_operation_table(function, rows=9, cols=9):
+
+#     if rows <= 2 or cols <= 2:
+#         print("ОШИБКА! Размерности таблицы должны быть больше 2!")
+#     else:
+
+#         arr = [[function(j, i) for i in range(1, rows+1)]
+#                for j in range(1, cols+1)]
+#         for rows in arr:
+#             print(" ".join([str(el) for el in rows]))
+
+# for row in arr:
+#     print(*"".join([str(row)]).split(","))
+# print(str(row).split('|'))
+
+# for i in range(rows):
+#     print()
+#     for j in range(cols):
+#         print(arr[j][i], end='')
+
+
+# print_operation_table(lambda x, y: x * y, 3, 3)
+
+# print_operation_table(lambda x, y: x + y, 4, 4)
+
+# print_operation_table(lambda x, y: x - y, 5, 5)
+
+# print_operation_table(lambda x, y: x * y, 1, 2)
+
+# print_operation_table(lambda x, y: x / y, 4, 4)
+
+# print_operation_table(lambda x, y: x * y)
+
+
+# Задача 49 найти дальнюю орбиту, найти максимальное произведение не одинаковых чисел
+
+# orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
+
+
+# def find_farthest_orbit(orbits_list):
+#     max_res = []
+#     for orbits in orbits_list:
+#         # print(orbits)
+#         max_res.append(orbits[0]*orbits[1])
+#         if orbits[0] != orbits[1] and orbits[0]*orbits[1] == max(max_res):
+#             index = max_res.index(max(max_res))
+#     return orbits_list[index]
+
+
+# print(*find_farthest_orbit(orbits))
+
+
+# def print_operation_table(operation, num_rows=9, num_columns=9):
+#     for i in range(1, num_rows + 1):
+#         answer = []
+#         for j in range(1, num_columns + 1):
+#             answer.append(str(operation(i, j)))
+#         print(''.join(f'{e:<4}' for e in answer))
+
+# print_operation_table(lambda x, y: x * y)
+
+# Задача. В списке хранятся числа.
+# Нужно выбрать только чётные числа и составить список пар
+# (число; квадрат числа).
+# Пример: 1 2 3 5 8 15 23 38
+# Получить: [(2, 4), (8, 64), (38, 1444)]
+
+# data = (1, 2, 3, 5, 8, 15, 23, 38)
+# list = []
+# for i in data:
+#     if i % 2 == 0:
+#         list.append((i, i**2))
+# print(*list)
+
+# numbers = list(map(int, data))
+# print(numbers)
+
+# numbers = list(filter(lambda x: x % 2 == 0, numbers))
+# print(numbers)
+
+# numbers = list(map(lambda x: (x, x**2), numbers))
+# print(*numbers)
+
+
+# numbers = list(map(lambda x: (x, x**2), (filter(lambda x: x % 2 == 0, data))))
+# print(*numbers)
+
+
+#
+#
+#
+
+
+# Урок 8. Работа с файлами
+# Дополнить справочник возможностью копирования данных из одного файла в другой.
+# Пользователь вводит номер строки, которую необходимо перенести из одного файла в другой.
+# Формат сдачи: ссылка на свой репозиторий или pull request на изначальный репозиторий.
