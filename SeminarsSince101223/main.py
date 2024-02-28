@@ -2518,3 +2518,24 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # Дополнить справочник возможностью копирования данных из одного файла в другой.
 # Пользователь вводит номер строки, которую необходимо перенести из одного файла в другой.
 # Формат сдачи: ссылка на свой репозиторий или pull request на изначальный репозиторий.
+
+
+# distance = int(input("Enter distance"))
+# speed = int(input("Enter speed"))
+
+# time = (distance-1)//speed + 1
+# print(time)
+
+rooms = int(input("Enter classes count: "))
+
+for i in range(1, rooms+1):
+    res = 0
+    classes = int(input("Enter  class size: "))
+    for j in range(classes, classes+i):
+        sum = (j//2+(j % 2))
+        res = res+sum
+        print(sum)
+    print(res)
+
+# a = (21//2)+(21 % 2)
+# print(a)
