@@ -4,10 +4,10 @@
 from phoneaccounts import *
 
 
-# user_interface()
+user_interface()
 
 # read_data()
 # append_data()
 # input_data()
 # print_data()
-search_data()
+# search_data()

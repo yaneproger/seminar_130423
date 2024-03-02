@@ -769,10 +769,6 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 
 
 
-
-
-
-
 # #  Задача 1 За день машина проезжает n километров. Сколько
 #  # дней нужно, чтобы проехать маршрут длиной m
 # километров? При решении этой задачи нельзя
@@ -783,32 +779,24 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # Output:
 # 2
 
+*/
+
+"""
+
 # Задача 1
 
 # n = int(input("Сколько за день проезжает машина? - "))
 # m = int(input("Общее расстояние: "))
-# # 750 : 700 = 1(ост. 50) + 1
-# # 2100 : 700 = 3 (ост. 0) + 0
-# print((m + n - 1) //  n)
+# # # 750 : 700 = 1(ост. 50) + 1
+# # # 2100 : 700 = 3 (ост. 0) + 0
+# print((m + n - 1) // n)
+
+
 # (m + n - 1) // n
-# (1401 + 700 - 1) // 700 = 3
+# (1401 + 700 - 1) // 700 == 3
 # print(-12 % 5) # 15 - 12 = 3
 # print(-14 % 6) # 18 - 14
 # print(-7 % 3) # 9 - 7
-
-
-
-
-
-
-
-*/
-
-
-
-
-
-
 
 
 # Задача №3. Общее обсуждение
@@ -820,12 +808,12 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # число парт, которое нужно приобрести для них.
 # Input: 20 21 22(ввод чисел НЕ в одну строку)
 # Output: 32
-
-# a // 2 + a % 2 + b // 2 + b % 2 + c // 2 + c % 2
-
-
-
-
+# a = 20
+# b = 21
+# c = 22
+# res = a // 2 + a % 2 + b // 2 + b % 2 + c // 2 + c % 2
+# print(res)
+"""
 
 # Вагоны в электричке пронумерованы натуральными числами, 
 # начиная с 1 (при этом иногда вагоны нумеруются от «головы» поезда, а иногда – с «хвоста»;
@@ -838,9 +826,6 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 #    j+i-1
 
 #    if j=i  это сделать невозможно. 
-
-
-
 
 
 #    Дано натуральное число. Требуется определить,
@@ -2510,9 +2495,6 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 
 
 #
-#
-#
-
 
 # Урок 8. Работа с файлами
 # Дополнить справочник возможностью копирования данных из одного файла в другой.
@@ -2520,22 +2502,75 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # Формат сдачи: ссылка на свой репозиторий или pull request на изначальный репозиторий.
 
 
-# distance = int(input("Enter distance"))
-# speed = int(input("Enter speed"))
+# За день машина проезжает n километров.
+# Сколько дней нужно, чтобы проехать маршрут длиной m километров?
+# При решении этой задачи нельзя пользоваться условной инструкцией if и циклами.
+# Input:
+# n = 700 m = 750 Output: 2
+
+# n = int(input("speed : "))
+# m = int(input("distance : "))
+
+# res = (n+m-1)//n
+# print(res)
+
+
+# distance = int(input("Enter distance : "))
+# speed = int(input("Enter speed : "))
 
 # time = (distance-1)//speed + 1
 # print(time)
 
-rooms = int(input("Enter classes count: "))
 
-for i in range(1, rooms+1):
-    res = 0
-    classes = int(input("Enter  class size: "))
-    for j in range(classes, classes+i):
-        sum = (j//2+(j % 2))
-        res = res+sum
-        print(sum)
-    print(res)
+# Задача №3. Общее обсуждение
+# В некоторой школе решили набрать три новых
+# математических класса и оборудовать кабинеты для
+# них новыми партами. За каждой партой может сидеть
+# два учащихся. Известно количество учащихся в
+# каждом из трех классов. Выведите наименьшее
+# число парт, которое нужно приобрести для них.
+# Input: 20 21 22(ввод чисел НЕ в одну строку)
+# Output: 32
+
+
+# a = 20
+# b = 21
+# c = 22
+
+# # res = a // 2 + a % 2 + b // 2 + b % 2 + c // 2 + c % 2
+
+# res = (a+b+c)//2 + (a % 2+b % 2+c % 2)
+# print(res)
+
+
+# rooms = int(input("Enter classes count: "))
+
+# for i in range(1, rooms+1):
+#     res = 0
+#     classes = int(input("Enter  class size: "))
+#     for j in range(classes, classes+i):
+#         sum = (j//2+(j % 2))
+#         res = res+sum
+#         print(sum)
+#     print(res)
 
 # a = (21//2)+(21 % 2)
 # print(a)
+
+
+# Задача №7. Решение в группах Дано натуральное число.
+# Требуется определить, является ли год с данным номером високосным.
+# Если год является високосным, то выведите YES, иначе выведите NO.
+# Напомним, что в соответствии с григорианским календарем, год является високосным,
+# если его номер кратен 4, но не кратен 100, а также если он кратен 400.
+# Input: 2016 Output: YES
+
+
+# n = 2024
+
+# for n in range(1950, 2099):
+
+#     if (n % 4 & n % 400 == 0):
+#         print(f"the         {n} year is leap")
+#     elif (n % 100 != 0):
+#         print(f"the {n} year is standart")

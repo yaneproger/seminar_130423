@@ -142,7 +142,7 @@ def input_data():
 
 
 def search_data():
-    print("Select your search type: \n"
+    print("Select your search type 1 : \n"
           "1.name\n"
           "2.surname\n"
           "3.patronymic\n"
@@ -152,7 +152,7 @@ def search_data():
 
     while input_data not in ("1", "2", "3", "4", "5"):
         print("Wrong input")
-        input_data = input("Select your search type:")
+        input_data = input("Select your search type 2 :")
 
     type_search_index = int(input_data) - 1
     print(f'type_index_search {type_search_index}')
@@ -171,9 +171,9 @@ def search_data():
 
 
 def user_interface():
-    entered_data = ''
-    while entered_data != '4':
-        print("Select your search type:\n"
+    entered_data = None
+    while entered_data != '4' or entered_data >= '5':
+        print("Menu 3 :\n"
               "1.Add contact\n"
               "2.find contact\n"
               "3.print contacts\n"
@@ -183,13 +183,16 @@ def user_interface():
 
         while entered_data not in ("1", "2", "3", "4"):
             print("Wrong input")
-            entered_data = input("Select your search type:")
+            entered_data = input("Select your search type 4 :")
             match entered_data:
                 case '1':
                     input_data()
                 case '2':
                     search_data()
                 case '3':
-                    print_data
+                    print_data()
                 case '4':
                     print('Game over')
+
+
+user_interface()
