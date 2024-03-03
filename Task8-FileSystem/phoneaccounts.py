@@ -179,20 +179,20 @@ def user_interface():
               "3.print contacts\n"
               "4.exit\n")
         # command = input("Select menu number : ")
-        entered_data = input(" : ")
+        entered_data = input("Select menu number 5 : ")
 
         while entered_data not in ("1", "2", "3", "4"):
             print("Wrong input")
-            entered_data = input("Select your search type 4 :")
-            match entered_data:
-                case '1':
-                    input_data()
-                case '2':
-                    search_data()
-                case '3':
-                    print_data()
-                case '4':
-                    print('Game over')
+        entered_data = input("Select your search type 4 :")
+        match entered_data:
+            case '1':
+                input_data()
+            case '2':
+                search_data()
+            case '3':
+                print_data()
+            case '4':
+                print('Game over')
 
 
 user_interface()

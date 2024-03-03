@@ -2570,7 +2570,7 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 
 # for n in range(1950, 2099):
 
-#     if (n % 4 & n % 400 == 0):
-#         print(f"the         {n} year is leap")
-#     elif (n % 100 != 0):
+#     if n % 4 == 0 and n % 100 != 0 or n % 400 == 0:
+#         print(f"the          {n} year is leap")
+#     else:
 #         print(f"the {n} year is standart")
