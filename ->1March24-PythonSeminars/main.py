@@ -1,4 +1,4 @@
-import random
+# import random
 
 # Задача 1.
 # Общее обсуждение За день машина проезжает n километров.
@@ -249,9 +249,312 @@ import random
 # Output:  [4, 5, 1, 2, 3]
 
 # data = [1, 2, 3, 4, 5]
-# k = 4
+# print(data)
+# k = 3
+# # data1 = []
+# # for i in range(len(data)):
+# #     # data1[i] = data[i%k]
+# #     data1.append(data[i-k+1])
+# # print(data1)
+# for i in range(k):
+#     temp1 = data.pop(len(data)-1)
+#     data.insert(0, temp1)
+# print(data)
+#
+#
+#
+#
+
+
+# Задача №21.
+# Общее обсуждение Напишите программу для
+# печати всех уникальных значений в словаре.
+# Input:
+# [{"V": "S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"},
+#  {"VII": " S005 "}, {" V ": " S009 "}, {" VIII ": " S007 "}]
+# Output: {'S005', 'S002', 'S007', 'S001', 'S009'}
+# Примечание: Список словарей задан изначально.
+# Пользователь его не вводит
+
+# data = [{"V": "S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"},
+#         {"VII": "S005"}, {"V": "S009"}, {"VIII": "S007"}]
+
 # data1 = []
-# for i in range(len(data)):
-#     # data1[i] = data[i%k]
-#     data1.append(data[i-k+1])
-# print(data1)
+# for dictn in data:
+#     print(*dictn.keys())
+#     print(*dictn.values())
+#     for val in dictn:
+#         data1.append(dictn.get(val))
+#     dict_set = set(data1)
+# print(dict_set)
+
+# res = set()
+# for d in data:
+#     for element in d.values():
+#         res.add(element)
+# print(res)
+
+# res = set()
+# for d in data:
+#     res = res.union(set(d.values()))
+# print(res)
+
+
+# Задача 12:
+# Петя и Катя – брат и сестра.
+# Петя – студент, а Катя – школьница.
+# Петя помогает Кате по математике.
+# Он задумывает два натуральных числа X и Y (X,Y≤1000),
+# а Катя должна их отгадать. Для этого Петя делает две подсказки.
+# Он называет сумму этих чисел S и их произведение P.
+# Помогите Кате отгадать задуманные Петей числа.
+
+# d = s**2 - 4*p
+# x = int((s - d**(0.5))//2)
+# y = int((s + d**(0.5))//2)
+# print(x, y)
+
+
+# Задача 10:
+# На столе лежат n монеток.
+# Некоторые из них лежат вверх решкой,
+# а некоторые – гербом. Определите минимальное число монеток,
+# которые нужно перевернуть, чтобы все монетки были повернуты
+# вверх одной и той же стороной.
+# Выведите минимальное количество монет,
+# которые нужно перевернуть.
+# 5 -> 1 0 1 1 0
+# 2
+# n = '1 1 1 0 0 0'
+# data = n.split(" ")
+# print(data)
+# print(f'len-data : {len(data)}')
+# zeros4et = 0
+# positives4et = 0
+# for i in data:
+#     # print(f'i : {i}')
+#     if int(i) == 0:
+#         # print(data[i])
+#         # print(f'i 1  : {i}')
+#         zeros4et += 1
+#         # print(f'zeros4et 1 {zeros4et}')
+#     else:
+#         positives4et += 1
+
+# if zeros4et == len(data) or positives4et == len(data):
+#     print("no need  in any moves {0}")
+# elif zeros4et < positives4et:
+#     print(f'zeros4et  {zeros4et}')
+# elif positives4et < zeros4et:
+#     print(f'positives4et  {positives4et}')
+# else:
+#     print("they are equals u can select any of 1 or 0's")
+
+# print(coins.count(min(coins, key=coins.count)))
+
+
+# Задача 14:
+# Требуется вывести все целые степени двойки
+# (т.е. числа вида 2k), не превосходящие числа N.
+# n = int(input("enter a numer : "))
+# for i in range(n):
+#     res = 2**i
+#     if res <= n:
+#         print(res)
+
+
+# Задача №17.
+# Общее обсуждение Дан список чисел.
+# Определите, сколько в нем встречается различных чисел.
+# Input: [1, 1, 2, 0, -1, 3, 4, 4]
+# Output: 6
+# data = [1, 1, 2, 0, -1, 3, 4, 4]
+# data1 = set(data)
+# print(len(data1))
+
+
+# Задача №23.
+# Решение в группах Дан массив, состоящий из целых чисел.
+# Напишите программу, которая подсчитает количество элементов массива,
+# больших предыдущего (элемента с предыдущим номером)
+# Input:
+# [0, -1, 5, 2, 3]
+# Output:
+# 2 (-1 < 5, 2 < 3)
+# Примечание:
+# Пользователь может вводить значения списка или список задан изначально.
+# list_1 = [0, -1, 5, 2, -1]
+# count = 0
+# for i in range(len(list_1)):
+#     if list_1[i] > list_1[i - 1]:
+#         count += 1
+# print(count)
+
+
+# Требуется вычислить, сколько раз встречается некоторое число k в массиве list_1.
+# Найдите количество и выведите его.
+# Пример:
+# # list_1 = [1, 2, 3, 4, 5]
+# k = 3
+# # # 1
+# data = [1, 2, 3, 4, 5, 3]
+# print(sum([1 for i in data if i == k]))
+
+
+# Требуется найти в массиве list_1
+# самый близкий по значению элемент
+# к заданному числу k и вывести его.
+# Считать, что такой элемент может
+# быть только один. Если значение
+# k совпадает с этим элементом - выведите его.
+# Пример:
+# list_1 = [1, 2, 3, 4, 5]
+# k = 6
+# # 5
+# print(type(list_1))
+
+
+# list_1 = [2, 4, 1, 6, 8, 2, 9, 3, 2, 5]
+# k = 10
+# list_1 = [1, 4, 3, 7, 8, 9, 2]
+# k = 8
+
+
+# list_1 = [1, 12, 6, 7, 8, 15]
+
+# k = 11
+
+# print([i if i == k else i == k + 1 or i == k-1 for i in list_1])
+
+
+#
+#
+#
+#
+
+
+# При использовании if / else используйте их перед циклом
+# [x if x in 'aeiou' else '*' for x in 'apple']
+
+# data = [i if i == k else i == k -
+# 1 for i in [i for i in list_1 if i == k or i == k-1]]
+
+
+# print([i if i == k else i == k-1 for i in [i for i in list_1 if i == k or i == k-1]])
+
+# print(max([list_1[i] if i == k else i == k-1 for i in range(len(list_1))]))
+
+
+# wordsdict = {"A": "1", "E": "1", "I": "1", "O": "1", "U": "1", "L": "1", "N": "1",
+#              "S": "1", "T": "1", "R": "1", "D": "2", "G": "2", "B": "3",
+#              "C": "3", "M": "3", "P": "3", "F": "4", "H": "4", "V": "4",
+#              "W": "4", "Y": "4", "K": "5", "J": "8", "X": "8", "Q": "10", "Z": "10",
+
+#              "А": "1", "В": "1", "Е": "1", "И": "1", "Н": "1", "О": "1",
+#              "Р": "1", "С": "1", "Т": "1",
+#              "Д": "2", "К": "2", "Л": "2", "М": "2", "П": "2", "У": "2",
+#              "Б": "3", "Г": "3", "Ё": "3", "Ь": "3", "Я": "3",
+
+#              "Й": "4", "Ы": "4",
+
+#              "Ж": "5", "З": "5", "Х": "5", "Ц": "5", "Ч": "5",
+#              "Ш": "8", "Э": "8", "Ю": "8",
+#                             "Ф": "10", "Щ": "10", "Ъ": "10"
+
+#              }
+
+
+# k = 'ноутбук'
+# word = k.split()
+# print(word)
+# wordcost = 0
+# data = []
+# wordsdict = {"A,E,I,O,U,L,N,S,T,R,B,C,M,P": "1",
+#              "D,G": "2",
+#              "B,C,M,P": "3",
+#              "F,H,V,W,Y": "4",
+#              "K": "5",
+#              "J,X": "8",
+#              "Q,Z": "10",
+#              "А,В,Е,И,Н,О,Р,С,Т": "1",
+#              "Д,К,Л,М,П,У": "2",
+#              "Б,Г,Ё,Ь,Я": "3",
+#              "Й,Ы": "4",
+#              "Ж,З,Х,Ц,Ч": "5",
+#              "Ш,Э,Ю": "8",
+#              "Ф,Щ,Ъ": "10"
+
+#              }
+# for key in wordsdict:
+# for el in k.upper():
+#     for element in wordsdict.keys():
+
+#         print(element)
+# print(wordsdict.get(el))
+# if el in element:
+# print(el.values())
+# print(wordsdict.get(el))
+# wordcost = wordcost+int(wordsdict.get(el))
+
+
+# print(data)
+# print(wordcost)
+
+# "1", : "1", "I": "1", "O": "1", "U": "1", "L": "1", "N": "1",
+#              "S": "1", "T": "1", "R": "1", "D": "2", "G": "2", "B": "3",
+#              "C": "3", "M": "3", "P": "3", "F": "4", "H": "4", "V": "4",
+#              "W": "4", "Y": "4", "K": "5", "J": "8", "X": "8", "Q": "10", "Z": "10"
+
+
+# data1 = []
+# for dictn in data:
+#     print(*dictn.keys())
+#     print(*dictn.values())
+#     for val in dictn:
+#         data1.append(dictn.get(val))
+#     dict_set = set(data1)
+# print(dict_set)
+
+# res = set()
+# for d in data:
+#     for element in d.values():
+#         res.add(element)
+# print(res)
+
+# res = set()
+# for d in data:
+#     res = res.union(set(d.values()))
+# print(res)
+
+
+# Самостоятельно сохраните в переменной строку текста.
+# Создайте из строки словарь, где ключ - буква,
+# а значение - код буквы.
+# Напишите преобразование в одну строку.
+
+
+# numbers = 'abc bcd abc bcd wwe qwe wwe qwe eeq'
+
+# numbers_dict = {i: ord(i) for i in numbers}
+
+# print(numbers_dict)
+
+
+# 1. Дано натуральное число *N* и последовательность из *N* элементов.
+#   Требуется вывести эту последовательность в обратном порядке.
+
+# ***Примечание.*** В программе запрещается объявлять массивы
+#  и использовать циклы (даже для ввода и вывода).
+
+
+# def reverse_num(number):
+#     if number < 1:
+#         return 1
+#     digit = int(input("Enter a number :"))
+#     # print(count, end="")
+#     reverse_num(number-1)
+#     print(digit, end=":")
+
+
+# counter = int(input("Enter counter : "))
+# reverse_num(counter)
