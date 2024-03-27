@@ -1809,6 +1809,25 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 #       if summa_dels(summa_dels(m)) == m and summa_dels(m) > m])
 
 
+# def del_sum(num: int) -> int:
+#     count = 1
+#     for i in range(2, int(num**0.5)):
+#         if num % i == 0:
+#             count += (i + num//i)
+#     return count
+
+
+# def friendly_num(k: int) -> set:
+#     set_num = {}
+#     for i in range(220, k):
+#         del_num = del_sum(i)
+#         if (i == del_num) or (i in set_num or del_num in set_num):
+#             continue
+#         if del_sum(del_num) == i:
+#             set_num.update({i: del_num})
+#     return set_num
+
+
 # ***************************************************************************************
 # семинары Урок 6. Повторение списков
 
@@ -2163,6 +2182,9 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # stroka = 'за-гад-ка-ра-свет-ка-ра-газ-да-не-на-ма-ли-ва-ла'
 # Ожидаемый ответ:Количество фраз должно быть больше одной!
 
+# stroka = 'пара-ра-рам рам-пам-папам-па-дам па-ра'
+# Ожидаемый ответ:Пам парам
+
 # stroka = 'со-лнце-гре-ет ве-сной'
 # Ожидаемый ответ:Пам парам
 
@@ -2180,30 +2202,30 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 
 #  Гласных букв - десять: «а» «у» «о» «и» «э» «ы» «я» «ю» «е» «ё».
 
-
 # stroka = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
 
+# stroka = 'пара-ра-рам рам-пам-папам-па-дам па-ра'
 
-# def RythmCount(str):
-#     # print(f'len{len(str.split())}')
+# def RythmCount(stiwok):
+#     # print(f'len = {len(str.split())}')
 #     data = []
-#     if len(str.split()) <= 1:
+#     if len(stiwok.split()) <= 1:
 #         print('Количество фраз должно быть больше одной!')
 #     else:
 #         # print(str)
-#         for s in str.split():
+#         for s in stiwok.split():
 #             # print(s)
 #             res1 = sum(
 #                 map(s.count, ['а', 'е', 'о', 'й', 'ю', 'у', 'э', 'ё', 'и', 'ы', 'я']))
 #             # print(res1)
 #             data.append(res1)
-#         # print(data)
-
-#         if min(data) % 2 == 0 or sum(data) % 2 == 0:
+#         if len(set(data))==1:
+#         # if min(data) == max(data):
+#         # if count(set(data)) >  1 
+#         # if min(data) % 2 == 0 or sum(data) % 2 == 0 :
 #             print('Парам пам-пам')
 #         else:
 #             print('Пам парам')
-
 
 # RythmCount(stroka)
 
@@ -2585,3 +2607,5 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # Дополнить справочник возможностью копирования данных из одного файла в другой.
 # Пользователь вводит номер строки, которую необходимо перенести из одного файла в другой.
 # Формат сдачи: ссылка на свой репозиторий или pull request на изначальный репозиторий.
+
+

@@ -558,3 +558,270 @@
 
 # counter = int(input("Enter counter : "))
 # reverse_num(counter)
+
+
+# import sys
+# from PyQt5.QtCore import *
+
+# from PyQt5.QtWidgets import *
+# from PyQt5.QtMultimediaWidgets import *
+# from PyQt5.QtWebEngineWidgets import *
+
+
+# Дан массив, состоящий из целых чисел.
+# Напишите программу, которая в данном массиве определит количество элементов,
+# у которых два соседних и,
+# при этом, оба соседних элемента меньше данного.
+# Сначала вводится число N — количество
+# элементов в массиве Далее записаны N чисел — элементы массива.
+# Массив состоит из целых чисел
+
+
+# Дан список чисел.
+# Посчитайте, сколько в нем пар элементов, равных друг другу.
+# Считается, что любые два элемента, равные друг другу образуют одну пару,
+# которую необходимо посчитать.
+# Вводится список чисел. Все числа списка находятся на разных строках.
+
+
+# list_1 = [2, 2, 2]
+
+# print(sum([list_1.count(i) % 2 for i in set(list_1)   ]))
+
+
+# print(sum([1 for i in list_1 if list_1.count(i) // 2 == 0]))
+
+# print(sum([list_1.count(i) % 2 for i in set(list_1) if list_1.count(i) // 2 == 0]))
+
+
+# def champ(arr):
+#     count = 0
+#     for i in range(len(list_1)):
+#         for j in range(i+1, len(list_1)):
+#             if list_1[j] == list_1[i]:
+#                 count += 1
+#     return count
+
+
+# print(champ(list_1))
+
+
+# arr = [5, 8, 6, 4, 9, 2, 7, 3]
+# count = 0
+# max1 = 0
+# for i in range(len(arr)):
+#     count = arr[i-2] + arr[i-1] + arr[i]
+#     if count > max1:
+#         max1 = count
+# print(max1)
+
+
+# def countdown(i):
+#     print('Obratniy otschet')
+#     print(i)
+#     if i <= 0:  # .... Базовый случай
+#         return
+#     else:    # --<· ·· ······ Рекурсивный случай
+
+#         countdown(i-1)
+
+# countdown(5)
+
+
+# Напишите функцию f,
+# которая на вход принимает два числа a и b,
+# и возводит число a в целую степень b с помощью рекурсии.
+
+# Функция не должна ничего выводить,
+# только возвращать значение.
+
+# a = 3
+# b = 5
+
+
+# def f(a, b):
+#     if b == 1:
+#         return a
+
+#     return a*f(a, b-1)
+
+
+# print(f(a, b))
+
+
+# Напишите рекурсивную функцию
+# sum(a, b), возвращающую сумму
+# двух целых неотрицательных чисел.
+# Из всех арифметических операций
+# допускаются только +1 и -1.
+# Также нельзя использовать циклы.
+
+# Функция не должна ничего выводить,
+# только возвращать значение.
+
+# a = 3
+# b = 5
+
+# def sum(a, b):
+#     if b == 0:
+#         return a
+
+#     return b+sum(a, b-b)
+
+
+# print(sum(a, b))
+
+
+# Определить индексы элементов массива (списка),
+# значения которых принадлежат заданному диапазону
+# (т.е. не меньше заданного минимума и не больше заданного максимума).
+# На вход подается список с элементамиlist_1
+# и границы диапазона в виде чисел min_number, max_number.
+# Пример
+# На входе:
+# list_1 = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
+# min_number = 0
+# max_number = 10
+# На выходе:
+# 1# 2# 3# 6# 7# 9# 10# 11# 13# 14# 16# 19
+
+# ([print(i) for i in range(len(list_1))
+#   if list_1[i] >= 0 and list_1[i] <= 10])
+
+
+# Арифметическая прогрессия
+# Заполните массив элементами арифметической
+# прогрессии. Её первый элемент a1 ,
+# разность d и количество элементов
+# n будет задано автоматически.
+# Формула для получения n-го члена прогрессии:
+# an = a1 + (n-1) * d.
+# Пример
+# На входе:# a1 = 2# d = 3# n = 4
+# На выходе:# 2# 5# 8# 11
+
+
+# # enumerate funciton working principe
+# # print(list(enumerate(['a', 'b', 'c'], start=1)))
+# #  output will be : [(1, 'a'), (2, 'b'), (3, 'c')]
+
+
+# toreturn copy of  an initial list
+# a = [1, 2, 3]
+# b = [4, 5, 6]
+# c = [7, 8, 9]
+# data = [[1, 2, 3], [1, 2, 3], c]
+# transformed_data = list(map(lambda x: x, data))
+# print(transformed_data)
+
+
+# Задача №49. Решение в группах Ввод:
+# Результатом функции должен быть кортеж,
+# содержащий длины полуосей эллипса орбиты
+# самой далекой планеты. Каждая
+# орбита представляет из себя кортеж из пары чисел
+# - полуосей ее эллипса. Площадь эллипса вычисляется
+# по формуле S = pi*a*b, где a и b - длины полуосей эллипса.
+
+
+# orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
+
+
+# def find_farthest_orbit(orbits):
+#     return (max(orbits, key=lambda x: x[0]*x[1] if x[0] != x[1] else 0))
+
+
+# print(find_farthest_orbit(orbits))
+
+import sys
+import os
+
+
+def characteristics(func1, data):
+    return all(list(map(func1, data)))
+    # return any(set(map(func1, data)))
+# def same(characteristics: callable, elements: list) -> bool:
+#     pass
+
+
+elements1 = [0, 0, 0, 0]
+# elements1 = [2, 4, 6, 8, 9]
+elements2 = [1, 2, 3, 4]
+
+elements3 = [1, 3, 5, 7]
+
+# print(same(is_odd, elements1))
+
+print(characteristics(lambda x: x % 2 == 0, elements2))
+
+
+def add_new_user(name: str, phone: str, filename: str):
+    """
+    Добавление нового пользователя.
+    """
+    new_line = '\n' if read_all(filename) != "" else ''
+    with open(filename, "a", encoding="utf-8") as file:
+        file.write(f"{new_line}{name} - {phone}")
+
+
+def read_all(filename: str) -> str:
+    """
+    Возвращает все содержимое телефонной книги.
+    """
+    with open(filename, "r", encoding="utf-8") as file:
+        return file.read()
+
+
+def search_user(filename: str, data: str) -> str:
+    """
+    Поиск записи по критерию data.
+    """
+    with open(filename, "r", encoding="utf-8") as file:
+        list_1 = file.read().split("\n")
+    result = []
+    result = [i for i in list_1 if data in i]
+    if not result:
+        return "По указанному значению совпадений не найдено"
+    return "\n".join(result)
+
+
+def transfer_data(source: str, dest: str, num_row: int):
+    """
+    Функция для переноса указанной строки из одного файла
+    в другой
+    source: str - имя исходного файла
+    dest: str - имя файла куда переносим
+    num_row: int - номер переносимой строки
+    """
+    pass
+
+
+INFO_STRING = """
+Выберите ркжим работы:
+1 - вывести все данные
+2 - добавление нового пользователя
+3 - поиск
+4 - перенос записи в другой файл
+"""
+
+file = "Text.txt"
+
+if file not in os.listdir():
+    print("указанное имя файла отсутсвует")
+    sys.exit()
+
+
+while True:
+    mode = int(input(INFO_STRING))
+    if mode == 1:
+        print(read_all(file))
+    elif mode == 2:
+        name = input("Введите Ваше имя: ")
+        phone = input("Введите Ваш телефон: ")
+        add_new_user(name, phone, file)
+    elif mode == 3:
+        data = input("Введите значение: ")
+        print(search_user(file, data))
+    elif mode == 4:
+        # Тут нужно вызвать функцию с аргументами
+        pass
