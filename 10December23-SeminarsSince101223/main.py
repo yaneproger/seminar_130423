@@ -2221,13 +2221,36 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 #             data.append(res1)
 #         if len(set(data))==1:
 #         # if min(data) == max(data):
-#         # if count(set(data)) >  1 
+#         # if count(set(data)) >  1
 #         # if min(data) % 2 == 0 or sum(data) % 2 == 0 :
 #             print('Парам пам-пам')
 #         else:
 #             print('Пам парам')
 
 # RythmCount(stroka)
+
+
+# Задача 36:
+# Напишите функцию print_operation_table
+# (operation, num_rows=6, num_columns=6),
+# которая принимает в качестве аргумента функцию,
+# вычисляющую элемент по номеру строки и столбца.
+# Аргументы num_rows и num_columns указывают число
+# строк и столбцов таблицы, которые должны быть распечатаны.
+# Нумерация строк и столбцов идет с единицы (подумайте, почему не с нуля).
+# Примечание: бинарной операцией называется любая операция,
+# у которой ровно два аргумента, как, например,
+# у операции умножения.
+# Ввод:
+# Вывод:
+# print_operation_table(lambda x, y: x * y)
+
+# 1         2         3        4        5       6
+# 2         4         6        8       10      12
+# 3         6         9       12       15      18
+# 4         8        12       16       20      24
+# 5        10        15       20       25      30
+# 6        12        18       24       30      36
 
 
 # https://colab.research.google.com/drive/1nfapiAATvu4A-xpJPxEB1KuyKivpkH-w?usp=sharing
@@ -2607,5 +2630,3 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # Дополнить справочник возможностью копирования данных из одного файла в другой.
 # Пользователь вводит номер строки, которую необходимо перенести из одного файла в другой.
 # Формат сдачи: ссылка на свой репозиторий или pull request на изначальный репозиторий.
-
-

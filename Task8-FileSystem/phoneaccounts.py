@@ -114,16 +114,19 @@
 
 def read_data():
     with open('accounts.txt', 'r', encoding='UTF-8') as phoneaccounts:
-        data = phoneaccounts.read()
+        # data = phoneaccounts.read()
         # data = (f'{phoneaccounts.readlines()}')
-        print(type(data))
-        return data
+        # print(type(data))
+        # return data
+        return phoneaccounts.read()
 
 
 def print_data():
     with open('accounts.txt', 'r', encoding='UTF-8') as phoneaccounts:
         data = (f'Data output:{phoneaccounts.readlines()}')
-        print(('\n').join(data.split('\\n')))
+        # data = (f'{phoneaccounts.readlines()}')
+        print(('\n').join(data.split('\\n', )))
+        # print(data.split('\\n'))
 
 
 def append_data(newdata):
@@ -137,7 +140,7 @@ def input_data():
     patronymic = input('enter patronymic: ')
     address = input('enter address: ')
     phone = input('enter phone: ')
-    data = (f'{name} {surname} {patronymic} {address} {phone}\n')
+    data = (f'\n{name} {surname} {patronymic} {address} {phone}\n')
     append_data(data)
 
 
@@ -153,18 +156,21 @@ def search_data():
     while input_data not in ("1", "2", "3", "4", "5"):
         print("Wrong input")
         input_data = input("Select your search type 2 :")
+        print(input_data)
 
     type_search_index = int(input_data) - 1
-    print(f'type_index_search {type_search_index}')
+    print(f'type_search_index {type_search_index}')
     search_input = input("Enter search data: ")
+    print(f'search_input {search_input}')
     accounts_data = read_data().split('\n\n')
-    # print(f'accounts_data{accounts_data}')
+    print(f'accounts_data{accounts_data}')
     for account in accounts_data:
         replaced_acc_data = account.replace('\n', ' ').split()
+
         # print(f'Len account : {len(account)}')
         # print(f'account : {account}')
         # print(f'Len replaced_acc_data : {len(replaced_acc_data)}')
-        # print(f'replaced_acc_data{replaced_acc_data}')
+        print(f'replaced_acc_data{replaced_acc_data}')
         if search_input in replaced_acc_data[type_search_index]:
             print(f'Result Data: {replaced_acc_data[type_search_index]}')
             print(account)
@@ -183,16 +189,17 @@ def user_interface():
 
         while entered_data not in ("1", "2", "3", "4"):
             print("Wrong input")
-        entered_data = input("Select your search type 4 :")
-        match entered_data:
-            case '1':
-                input_data()
-            case '2':
-                search_data()
-            case '3':
-                print_data()
-            case '4':
-                print('Game over')
+        else:
+            # entered_data = input("Select your search type 4 :")
+            match entered_data:
+                case '1':
+                    input_data()
+                case '2':
+                    search_data()
+                case '3':
+                    print_data()
+                case '4':
+                    print('Game over')
 
 
 user_interface()

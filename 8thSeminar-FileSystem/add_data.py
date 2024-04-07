@@ -10,5 +10,5 @@ def add_row():
     now_number_row = len(data) + 1
     with open(f'db/data_{nf}.txt', 'a', encoding='utf-8') as file:
         file.write(f'{now_number_row};{name};'
-                   f'{surname};{birthdate};{town}\n')
+                   f'{surname};{birthdate};{town}\n\n')
     print("Данные успешно записаны!")
