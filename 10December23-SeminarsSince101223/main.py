@@ -2215,6 +2215,13 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 #         # print(str)
 #         for s in stiwok.split():
 #             # print(s)
+
+#            # temp = []
+#            # temp1 = list(map(s.count, ['а', 'е', 'о', 'ю',
+#            #                            'у', 'э', 'ё', 'и', 'ы', 'я']))
+#            # temp.append(temp1)
+#            # print(f'temp{temp}')
+
 #             res1 = sum(
 #                 map(s.count, ['а', 'е', 'о', 'й', 'ю', 'у', 'э', 'ё', 'и', 'ы', 'я']))
 #             # print(res1)
@@ -2226,6 +2233,27 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 #             print('Парам пам-пам')
 #         else:
 #             print('Пам парам')
+
+# RythmCount(stroka)
+
+
+# stroka = 'пара-ра-рам рам-пам-папам-па-дам па-ра'
+
+
+# def RythmCount(stiwok):
+#     data = []
+#     if len(stiwok.split()) <= 1:
+#         print('Количество фраз должно быть больше одной!')
+#     else:
+#         for s in stiwok.split():
+#             res1 = sum(
+#                 map(s.count, ['а', 'е', 'о', 'й', 'ю', 'у', 'э', 'ё', 'и', 'ы', 'я']))
+#             data.append(res1)
+#         if len(set(data)) == 1:
+#             print('Парам пам-пам')
+#         else:
+#             print('Пам парам')
+
 
 # RythmCount(stroka)
 
@@ -2398,31 +2426,50 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 #     return lambda x, y: x * y
 
 
-# num_rows = 3
-# num_columns = 3
+num_rows = 3
+num_columns = 3
 
 
-# def print_operation_table(function, num_rows, num_columns):
-#     massive = []
-#     for i in range(num_rows):
-#         for j in range(num_columns):
-#             massive[i][j] = function(i, j)
-#     return massive
+def print_operation_table(function, num_rows, num_columns):
+    massive = [[]]
+    for i in range(1, num_rows+1):
+        massive.append(i)
+        for j in range(1+num_columns+1):
+            massive.append(j)
+            massive[i][j] = 123
+            # massive[i] = 15
+    return print(massive)
 
+
+print_operation_table(lambda x, y: x * y, 3, 3)
+
+x, y = 5, 3
+array = [[0 for j in range(y)] for i in range(x)]
+print(array)
+
+# def print_operation_table(function, rows=9, cols=9):
+
+#     if rows <= 2 or cols <= 2:
+#         print("ОШИБКА! Размерности таблицы должны быть больше 2!")
+#     else:
+
+#         arr = [[function(j, i) for i in range(1, rows+1)]
+#                for j in range(1, cols+1)]
+#         for rows in arr:
+#             print(" ".join([str(el) for el in rows]))
+
+# print_operation_table(lambda x, y: x * y, 9, 9)
 
 # def operation(x, y):
 #     return lambda x, y: x * y
 # a = operation(3, 3)
 
-
 # def function(x, y):
 #     return x * y
-
 
 # def arr_el(count):
 #     count = range(1, count)
 #     return count
-
 
 # def print_operation_table(function, num_rows, num_columns):
 
@@ -2433,9 +2480,7 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 #         print(*row)
 #     print()
 
-
 # print_operation_table(lambda x, y: x * y, 9, 9)
-
 
 # def print_operation_table1(function, num_rows, num_columns):
 #
@@ -2447,9 +2492,7 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 #         for j in range(1, num_columns-2):
 #  print(arr[i][j], end=" | ")
 
-
 # print_operation_table(lambda x, y: x * y, 3, 3)
-
 
 # def print_operation_table(function, rows=9, cols=9):
 
@@ -2471,7 +2514,6 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 #     for j in range(cols):
 #         print(arr[j][i], end='')
 
-
 # print_operation_table(lambda x, y: x * y, 3, 3)
 
 # print_operation_table(lambda x, y: x + y, 4, 4)
@@ -2484,11 +2526,9 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 
 # print_operation_table(lambda x, y: x * y)
 
-
 # Задача 49 найти дальнюю орбиту, найти максимальное произведение не одинаковых чисел
 
 # orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
-
 
 # def find_farthest_orbit(orbits_list):
 #     max_res = []
@@ -2499,9 +2539,7 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 #             index = max_res.index(max(max_res))
 #     return orbits_list[index]
 
-
 # print(*find_farthest_orbit(orbits))
-
 
 # def print_operation_table(operation, num_rows=9, num_columns=9):
 #     for i in range(1, num_rows + 1):
@@ -2534,13 +2572,10 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # numbers = list(map(lambda x: (x, x**2), numbers))
 # print(*numbers)
 
-
 # numbers = list(map(lambda x: (x, x**2), (filter(lambda x: x % 2 == 0, data))))
 # print(*numbers)
 
-
 #
-
 
 # За день машина проезжает n километров.
 # Сколько дней нужно, чтобы проехать маршрут длиной m километров?
@@ -2577,7 +2612,6 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # Input: 20 21 22(ввод чисел НЕ в одну строку)
 # Output: 32
 
-
 # a = 20
 # b = 21
 # c = 22
@@ -2586,7 +2620,6 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 
 # res = (a+b+c)//2 + (a % 2+b % 2+c % 2)
 # print(res)
-
 
 # rooms = int(input("Enter classes count: "))
 
@@ -2602,14 +2635,12 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 # a = (21//2)+(21 % 2)
 # print(a)
 
-
 # Задача №7. Решение в группах Дано натуральное число.
 # Требуется определить, является ли год с данным номером високосным.
 # Если год является високосным, то выведите YES, иначе выведите NO.
 # Напомним, что в соответствии с григорианским календарем, год является високосным,
 # если его номер кратен 4, но не кратен 100, а также если он кратен 400.
 # Input: 2016 Output: YES
-
 
 # n = 2024
 
@@ -2620,11 +2651,9 @@ print('MaxElementsValue', count_maximal, 'ArraySize', len(numbers),
 #     else:
 #         print(f"the {n} year is standart")
 
-
 #
 #
 #
-
 
 # Урок 8. Работа с файлами
 # Дополнить справочник возможностью копирования данных из одного файла в другой.
