@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "seminarTest",
+      "request": "launch",
+      "mainClass": "seminarTest",
+      "projectName": "python_1e5f189f"
+    },
+    {
+      "type": "java",
       "name": "Printer",
       "request": "launch",
       "mainClass": "Printer",

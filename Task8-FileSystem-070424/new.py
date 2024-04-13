@@ -76,7 +76,7 @@ def search_contact():
 # search_contact()
 
 
-def change_contact():
+def change_contact():  # vivod menu
     print('Select from : \n'
           '1. Whole contact\n'
           '2. Name\n'
@@ -85,35 +85,38 @@ def change_contact():
           '5. Address\n'
           '6. Phone\n'
           )
+    # vvod simvola dla ispolzovaniya kak index
     user_data = input("Select search type : ")
     while user_data not in ('1', '2', '3', '4', '5', '6'):
         user_data = input("Select search type : ")
 
-    search_index = int(user_data)-1
+    search_index = int(user_data)-1  # perevod v 4islovoy format
     # Minus 1, tak kak indexaciya na4inayetsa s 0-la
 
-    spisok_kontaktov = file_readlines()
+    spisok_kontaktov = file_readlines()  # 4itaet fayl vozvrawaet Spisok Strok
 
     # print(*file_read().strip().split("\n"))
     print_data()
-    contact_number = int(input('Enter contact number u want to change : '))
+    # vibor poradkovogo nomera kontakta
+    contact_number_int = int(input('Enter contact number u want to change : '))
+    #     i perevod v 4islovoy  format
 
-    if search_index == 0:
-        contact_number_int = int(contact_number)
+    if search_index == 0:   # esli mi vibrali perviy punkt menu - Zamena Vsego kontakta to index==0
+        # i poisk idet po nomeram kontaktov
+
         print("'Enter contact's new data'")
 
         # spisok_kontaktov = file_read().strip().split('\n')
         print(f'len(spisok_kontaktov)  {len(spisok_kontaktov) }')
-        row_number = contact_number_int
 
         name = input("Enter name : ")
         surname = input("Enter surname : ")
         patronymic = input("Enter patronymic : ")
         phone = input("Enter phone :")
         address = input("Enter address :")
-        # contact_data = f'{row_number} {name} {surname} {patronymic} {phone} {address}'
+
         spisok_kontaktov[contact_number_int -
-                         1] = f'{row_number};{name};{surname};{patronymic};{phone};{address}\n'
+                         1] = f'{contact_number_int};{name};{surname};{patronymic};{phone};{address}\n'
 
         # print(spisok_kontaktov)
 
@@ -127,51 +130,59 @@ def change_contact():
         print_data()
 
     else:
-        # pass
+
+        # problemi v etoy 4asti -
+        # posle vibora etix punktov upravlenie idet suda
+        # tut po planu mi izmenayem sostavlayuwue strok
+        # dla etogo
+        #   '2. Name\n'
+        #   '3. Surname\n'
+        #   '4. Patronymic\n'
+        #   '5. Address\n'
+        #   '6. Phone\n'
 
         spisok_kontaktov = file_read().strip().split("\n")
+        # polu4ayu  spisok strok razdelenniy po perevodu stroki "\n"
         print(spisok_kontaktov)
+        print(type(spisok_kontaktov))
 
+        # vvodim iskomoe zna4eniye dla zameni
         search_data = input("Enter search data : ")
-        for kontakt in spisok_kontaktov:
-            for temp in kontakt:
+        for kontakt in spisok_kontaktov:    # iwem stroku v spiske
+            for element in kontakt:         # iwem v  kajdoy stroke  spiska
+                # print(f'kontakt  {kontakt}')
+                element = kontakt.split(";")
+                # razdelayem stroku po ' ; ' - razdelitelu
+                # print(f'element[search_index]  {element[search_index]}')
+                print(f'element  {element}')
 
-                temp = kontakt.split(";")
-                print(f'temp[contact_number]  {temp[contact_number]}')
-                print(f'temp  {temp}')
+                if search_data in element[search_index]:  #
+                    #   zdesiwem element s indeksom otsuda  i minus odin  -1->
+                    # ->
+                    #   '2. Name\n'
+                    #   '3. Surname\n'
+                    #   '4. Patronymic\n'
+                    #   '5. Address\n'
+                    #   '6. Phone\n'
+                    #
+                    print(f'element[search_index] {element[search_index]}')
+                    #    pe4ataem naydenniy element
 
-                if search_data in temp[contact_number]:
-                    print(f'temp[search_index] {temp[search_index]}')
                     entered_data = input("Enter data to change : ")
-                    temp[search_index] = entered_data
+                    # vvodim zna4enie dla zapisi vmesto naydennogo zna4eniya
+                    element = entered_data
+                    # prisvaivaem vvedennoe zna4enie
                     print(spisok_kontaktov)
                 else:
                     print("wrong input")
                     break
 
-        # with open(f'accounts.txt', 'w', encoding='UTF-8') as accounts:
-        #     # accounts.writelines(
-        #     # " ".join([str(el) for el in spisok_kontaktov]))
-        #     accounts.writelines(spisok_kontaktov)
-        #     print(*file_read().strip().split("\n"))
+# Zdes ne udayetsa zapisat zna4eniye
 
-            # for position in kontakt:s
-            # print(f'position {position}')
-            # print(f'len position {len(position)}')
+# i vtoroe -
+# ya ispolzoval 2-voynoy cikl - on naxodit zna4eniye neskolko raz
 
-            # kontakt_params = kontakt.replace("\n", " ").split()
-            # print(f'kontakt_params {kontakt_params}')
-            # print(f'search_index {search_index}')
-            # print(f'contact_number {contact_number}')
-            # if contact_number in kontakt_params[0]:
-            #     if search_data in kontakt_params:
-            #         data_to_be_written = input(
-            #             "Enter data to be written : ")
-
-            #         kontakt_params[search_index] = data_to_be_written
-            #         spisok_kontaktov[contact_number_int-1] = kontakt_params
-            #         # file_rewrite(spisok_kontaktov)
-            #         print(spisok_kontaktov)
+                # A takje problema s obratnoy sborkoy stroki v prevona4alniy vid i zapisi ee v fayl
 
             #         with open(f'accounts.txt', 'w', encoding='UTF-8') as accounts:
             #             accounts.write(
