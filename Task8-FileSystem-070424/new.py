@@ -76,19 +76,20 @@ def search_contact():
 # search_contact()
 
 
-# Logika dannoy funkcii sostoit v tom ctobi menat soderjimoe
-            # vsego kontakta/stroki iz spiska kontaktov - 1-oe menu
-            # a takje menat soderjimoe elementov  samogo kontaka/stroki - 2-6-e menu
-            # 1-oe menu vipolnayetsa v uslovii - if - eto rabotaet
-
-            # 3 -ostalniye menu -2-6 poka polnostyu realizovat ne udayetsa
-            # eto uslovie  - else :  -posle 144-oy stroki -
-            # problema s ciklom -
-            # samu zapis naxoju - no tak kak ispolzuyu 2-voynoy cikl
-            # to zapis otrabativaet mnogo raz
-            # i plus ne polu4aetsa vnesti izmeneniya v stroku
-
 def change_contact():  # vivod menu
+
+    # Logika dannoy funkcii sostoit v tom ctobi menat soderjimoe
+    # vsego kontakta/stroki iz spiska kontaktov - 1-oe menu
+    # a takje menat soderjimoe elementov  samogo kontaka/stroki - 2-6-e menu
+    # 1-oe menu vipolnayetsa v uslovii - if - eto rabotaet
+
+    # 3 -ostalniye menu -2-6 poka polnostyu realizovat ne udayetsa
+    # eto uslovie  - else :  -posle 144-oy stroki -
+    # problema s ciklom -
+    # samu zapis naxoju - no tak kak ispolzuyu 2-voynoy cikl
+    # to zapis otrabativaet mnogo raz
+    # i plus ne polu4aetsa vnesti izmeneniya v stroku
+
     print('Select from : \n'
           '1. Whole contact\n'
           '2. Name\n'
@@ -182,7 +183,7 @@ def change_contact():  # vivod menu
 
                     entered_data = input("Enter data to change : ")
                     # vvodim zna4enie dla zapisi vmesto naydennogo zna4eniya
-                    element = entered_data
+                    element[search_index] = entered_data
                     # prisvaivaem vvedennoe zna4enie
                     print(spisok_kontaktov)
                 else:
