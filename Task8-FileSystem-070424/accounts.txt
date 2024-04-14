@@ -1,4 +1,7 @@
-1;Anna;Annova;Annovna;12123;Leningrad
+1;Annuwka;Annova;Annovna;111;Anapa
 2;Oleg;Olegov;Olegovich;43534;moscow
-3;ivan;ivanov;ivanovich;154353;orel
-4;Amir;Amirov;Amirovich;Baku;4356432
+3;Ivan;Ivanov;Ivanovi4;33333;Ivanovo
+4;Amir;Amirov;Amirovich;4356432;Baku
+5;Miri;Miriev;Mirievich;555;Barselona
+6;Nava;Navaev;Navaevi4;6666;Navaiw
+7;Amil;Amilov;Amilovich;777;Baki
