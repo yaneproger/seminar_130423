@@ -5,3 +5,5 @@
 5;Miri;Miriev;Mirievich;555;Barselona
 6;Nava;Navaev;Navaevi4;6666;Navaiw
 7;Amil;Amilov;Amilovich;777;Baki
+8;Rami;Ramiev;Ramievich;8888;Deli
+9;Namiq;Namiqov;Namiqovich;999;Balaken

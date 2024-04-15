@@ -1,32 +1,96 @@
 
 
-def file_read():
-    with open('accounts.txt', 'r', encoding='UTF-8') as accounts:
+def filerowsnumber_filedata(input_file_name):
+
+    import os
+
+    file_names = []
+
+    for filename in os.listdir("."):
+        file_names.append(filename)
+
+    print(file_names)
+
+    source_file = input_file_name
+    # print(f'source_file  : {source_file}')
+
+    while source_file not in file_names:
+        source_file = str(input("Enter source text file : "))
+
+    print(f'source_file  : {source_file}')
+    print(f'source_file type  : {type(source_file)}')
+    # print("Select source file :")
+
+    with open(source_file, 'r', encoding='utf-8') as file:
+        source_file_data = file.readlines()
+
+    print(f'source_file_data  : {source_file_data}')
+    # print(data)
+
+    spisok_kontaktov = source_file_data  # 4itaet fayl vozvrawaet Spisok Strok
+
+    file_rows_number = len(source_file_data)
+
+    return source_file_data, file_rows_number, file_names
+
+#
+#
+#
+
+
+def file_read(filename):
+    with open(filename, 'r', encoding='UTF-8') as accounts:
         return accounts.read()
 
 
-def file_readlines():
-    with open('accounts.txt', 'r', encoding='utf-8') as accounts:
-        return accounts.readlines()
+# def file_readlines():
+#     with open('accounts.txt', 'r', encoding='utf-8') as accounts:
+#         return accounts.readlines()
 
 
-def file_append(data=''):
-    with open('accounts.txt', 'a', encoding='UTF-8') as accounts:
+def file_append(data, filename):
+    with open(filename, 'a', encoding='UTF-8') as accounts:
         accounts.write(data)
 
 
-def file_rewrite(data=''):
-    with open('accounts.txt', 'w', encoding='UTF-8') as accounts:
-        accounts.write(data)
+# def file_rewrite(data=''):
+#     with open('accounts.txt', 'w', encoding='UTF-8') as accounts:
+#         accounts.write(data)
 
 
-def file_rewritelines(data=''):
-    with open('accounts.txt', 'w', encoding='UTF-8') as accounts:
+def file_rewritelines(data, filename):
+    with open(filename, 'w', encoding='UTF-8') as accounts:
         accounts.writelines(data)
 
 
+def print_data(filename):
+    return print(file_read(filename))
+
+
 def input_data():
-    spisok_kontaktov = file_readlines()
+
+    import os
+
+    file_names = []
+
+    for filename in os.listdir("."):
+        file_names.append(filename)
+
+    print(file_names)
+
+    source_file = str(input("Enter source file : "))
+
+    spisok_kontaktov, rowscount, file_names = filerowsnumber_filedata(
+        source_file)
+
+    print(*file_names)
+
+    print(spisok_kontaktov)
+    print(rowscount)
+
+    print_data(source_file)
+
+    # spisok_kontaktov = file_readlines()
     print(f'len(spisok_kontaktov)  {len(spisok_kontaktov) }')
     row_number = len(spisok_kontaktov)+1
     name = input("Enter name : ")
@@ -35,22 +99,39 @@ def input_data():
     phone = input("Enter phone :")
     address = input("Enter address :")
     contact_data = f'{row_number};{name};{surname};{patronymic};{phone};{address}\n'
-    file_append(contact_data)
+    file_append(contact_data, source_file)
+    print_data(source_file)
 
 
 # input_data()
-
-
-def print_data():
-    return print(file_read())
 
 
 # print_data()
 
 
 def search_contact():
-    spisok_kontaktov = file_read().strip().split('\n')
-    print_data()
+
+    import os
+
+    file_names = []
+
+    for filename in os.listdir("."):
+        file_names.append(filename)
+
+    print(file_names)
+
+    source_file = str(input("Enter source file : "))
+
+    spisok_kontaktov, rowscount, file_names = filerowsnumber_filedata(
+        source_file)
+
+    print(*file_names)
+
+    print(spisok_kontaktov)
+    print(rowscount)
+
+    # spisok_kontaktov = file_read().strip().split('\n')
+    print_data(source_file)
     # print(spisok_kontaktov)
     print('Select from : \n'
           '1. Contact number\n'
@@ -68,7 +149,7 @@ def search_contact():
     # Minus 1, tak kak indexaciya na4inayetsa s 0-la
 
     search_data = input("Enter search data : ")
-    spisok_kontaktov = file_read().strip().split('\n')
+    # spisok_kontaktov = file_read().strip().split('\n')
     # print(spisok_kontaktov)
     for kontakt in spisok_kontaktov:
         kontakt_params = kontakt.split(";")
@@ -88,6 +169,25 @@ def change_contact():  # vivod menu
     # a takje  - menu -2-6 - menat soderjimoe elementov  samogo kontaka/stroki - 2-6-e menu
     # 1-oe menu vipolnayetsa v uslovii - if - eto rabotaet
 
+    import os
+
+    file_names = []
+
+    for filename in os.listdir("."):
+        file_names.append(filename)
+
+    print(file_names)
+
+    source_file = str(input("Enter source file : "))
+
+    spisok_kontaktov, rowscount, file_names = filerowsnumber_filedata(
+        source_file)
+
+    print(*file_names)
+
+    print(spisok_kontaktov)
+    print(rowscount)
+
     print('Select from : \n'
           '1. Whole contact\n'
           '2. Name\n'
@@ -104,10 +204,10 @@ def change_contact():  # vivod menu
     search_index = int(user_data)-1  # perevod v 4islovoy format
     # Minus 1, tak kak indexaciya na4inayetsa s 0-la
 
-    spisok_kontaktov = file_readlines()  # 4itaet fayl vozvrawaet Spisok Strok
+    # spisok_kontaktov = file_readlines()  # 4itaet fayl vozvrawaet Spisok Strok
     print([spisok_kontaktov])
     # print(*file_read().strip().split("\n"))
-    print_data()
+    print_data(source_file)
     # vibor poradkovogo nomera kontakta
     contact_number_int = int(input('Enter contact number u want to change : '))
     #     i perevod v 4islovoy  format
@@ -175,12 +275,12 @@ def change_contact():  # vivod menu
         spisok_kontaktov[contact_number_int -
                          1] = f'{contact_number_int};{old_name};{old_surname};{old_patronymic};{old_phone};{new_Address}\n'
 
-    file_rewritelines(spisok_kontaktov)
+    file_rewritelines(spisok_kontaktov, source_file)
 
     # with open(f'accounts.txt', 'w', encoding='UTF-8') as accounts:
     #     accounts.writelines(spisok_kontaktov)
     # print(*file_read().strip().split("\n"))
-    print_data()
+    print_data(source_file)
 
     # # vvodim iskomoe zna4eniye dla zameni
     # search_data = input("Enter search data : ")
@@ -208,14 +308,33 @@ def change_contact():  # vivod menu
 
 def delete_contact():
 
-    spisok_kontaktov = file_readlines()  # 4itaet fayl vozvrawaet Spisok Strok
+    import os
+
+    file_names = []
+
+    for filename in os.listdir("."):
+        file_names.append(filename)
+
+    print(file_names)
+
+    source_file = str(input("Enter source file : "))
+
+    spisok_kontaktov, rowscount, file_names = filerowsnumber_filedata(
+        source_file)
+
+    print(*file_names)
+
+    print(spisok_kontaktov)
+    print(rowscount)
+
+    # spisok_kontaktov = file_readlines()  # 4itaet fayl vozvrawaet Spisok Strok
     # print([spisok_kontaktov])
     if len(spisok_kontaktov) == 0:
         print("kontaktov net")
     else:
 
         # print(*file_read().strip().split("\n"))
-        print_data()
+        print_data(source_file)
         print(f'len(spisok_kontaktov)  {len(spisok_kontaktov) }')
         # vibor poradkovogo nomera kontakta
         contact_number_int = int(
@@ -236,12 +355,20 @@ def delete_contact():
                             f'{spisok_kontaktov[i].split(";")[5]}'
                             for i in range(len(spisok_kontaktov))]
 
-        file_rewritelines(spisok_kontaktov)
+        file_rewritelines(spisok_kontaktov, source_file)
         print("Kontakt deleted")
-        print_data()
+        print_data(source_file)
 
 
-# delete_contact()
+delete_contact()
+
+
+#
+#
+
+
+#
+#
 
 
 def filerowsnumber_filedata(input_file_name):
@@ -338,7 +465,7 @@ def copy_contact():
     # spisok_kontaktov = source_file_data  # 4itaet fayl vozvrawaet Spisok Strok
     # print([spisok_kontaktov])
     # print(*file_read().strip().split("\n"))
-    print_data()
+    print_data(source_file)
     print(f'len(spisok_kontaktov)  {len(spisok_kontaktov) }')
 
     contact_number_int = int(input('Enter contact number u want to copy : '))-1
@@ -348,7 +475,7 @@ def copy_contact():
             input('Enter contact number u want to copy : '))-1
     #     i perevod v 4islovoy  format
 
-    print(spisok_kontaktov[contact_number_int].split(";")[1])
+    print(spisok_kontaktov[contact_number_int].split(";")[0])
 
     print(spisok_kontaktov[contact_number_int])
 
@@ -394,11 +521,18 @@ def copy_contact():
 
     print(new_contact_data)
 
-    with open(destination_file, 'a', encoding='UTF-8') as accounts:
-        accounts.write(new_contact_data)
+    # with open(destination_file, 'a', encoding='UTF-8') as accounts:
+    #     accounts.write(new_contact_data)
+
+    file_append(new_contact_data, destination_file)
+    print_data(destination_file)
 
 
 copy_contact()
+
+# input_file1 = input("Enter sourcefilename : ")
+# input_file2 = input("Enter destinatonfilename : ")
+# file_append(input_file1)
 
 
 ###
