@@ -7,3 +7,4 @@
 7;Amil;Amilov;Amilovich;777;Baki
 8;Rami;Ramiev;Ramievich;8888;Deli
 9;Namiq;Namiqov;Namiqovich;999;Balaken
+10;Lama;Lamaeva;Lamaevna;101010;Leningrad

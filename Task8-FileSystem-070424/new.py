@@ -67,6 +67,24 @@ def print_data(filename):
     return print(file_read(filename))
 
 
+def print_contacts():
+
+    import os
+    file_names = []
+    for filename in os.listdir("."):
+        file_names.append(filename)
+    print(file_names)
+    source_file = str(input("Enter source file : "))
+    spisok_kontaktov, rowscount, file_names = filerowsnumber_filedata(
+        source_file)
+
+    print(*file_names)
+
+    print(spisok_kontaktov)
+    print(rowscount)
+    print_data(source_file)
+
+
 def input_data():
 
     import os
@@ -205,9 +223,10 @@ def change_contact():  # vivod menu
     # Minus 1, tak kak indexaciya na4inayetsa s 0-la
 
     # spisok_kontaktov = file_readlines()  # 4itaet fayl vozvrawaet Spisok Strok
-    print([spisok_kontaktov])
+    # print([spisok_kontaktov])
     # print(*file_read().strip().split("\n"))
     print_data(source_file)
+    print(f'contacts count : {rowscount}')
     # vibor poradkovogo nomera kontakta
     contact_number_int = int(input('Enter contact number u want to change : '))
     #     i perevod v 4islovoy  format
@@ -360,7 +379,7 @@ def delete_contact():
         print_data(source_file)
 
 
-delete_contact()
+# delete_contact()
 
 
 #
@@ -528,7 +547,7 @@ def copy_contact():
     print_data(destination_file)
 
 
-copy_contact()
+# copy_contact()
 
 # input_file1 = input("Enter sourcefilename : ")
 # input_file2 = input("Enter destinatonfilename : ")
@@ -540,7 +559,6 @@ copy_contact()
 
 
 def interface():
-    file_append()
     user_data = ''
     while user_data != '7':
         print('Select ur choice : \n'
@@ -557,7 +575,7 @@ def interface():
             user_data = input("Enter operation number : ")
         match user_data:
             case '1':
-                print_data()
+                print_contacts()
             case '2':
                 search_contact()
             case '3':
@@ -577,4 +595,4 @@ def interface():
 # print_data()
 # search_contact()
 # change_contact()
-# interface()
+interface()
