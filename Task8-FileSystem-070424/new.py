@@ -75,25 +75,18 @@ def search_contact():
         # print(kontakt_params)
 
         if search_data in kontakt_params[search_index]:
-            print(kontakt)
+            print(*kontakt_params)
 
 
-search_contact()
+# search_contact()
 
 
 def change_contact():  # vivod menu
 
     # Logika dannoy funkcii sostoit v tom ctobi menat soderjimoe
-    # vsego kontakta/stroki iz spiska kontaktov - 1-oe menu
-    # a takje menat soderjimoe elementov  samogo kontaka/stroki - 2-6-e menu
+    # vsego kontakta/stroki iz spiska kontaktov - eto 1-oe menu
+    # a takje  - menu -2-6 - menat soderjimoe elementov  samogo kontaka/stroki - 2-6-e menu
     # 1-oe menu vipolnayetsa v uslovii - if - eto rabotaet
-
-    # 3 -ostalniye menu -2-6 poka polnostyu realizovat ne udayetsa
-    # eto uslovie  - else :  -posle 144-oy stroki -
-    # problema s ciklom -
-    # samu zapis naxoju - no tak kak ispolzuyu 2-voynoy cikl
-    # to zapis otrabativaet mnogo raz
-    # i plus ne polu4aetsa vnesti izmeneniya v stroku
 
     print('Select from : \n'
           '1. Whole contact\n'
@@ -152,17 +145,6 @@ def change_contact():  # vivod menu
         spisok_kontaktov[contact_number_int -
                          1] = f'{contact_number_int};{name};{surname};{patronymic};{phone};{address}\n'
 
-        # print(spisok_kontaktov)
-
-        # file_rewrite(spisok_kontaktov)
-        # with open(f'accounts.txt', 'w', encoding='UTF-8') as accounts:
-        #     accounts.writelines(spisok_kontaktov)
-
-        # with open(f'accounts.txt', 'w', encoding='UTF-8') as accounts:
-        #     accounts.writelines(spisok_kontaktov)
-        # # print(*file_read().strip().split("\n"))
-        # print_data()
-
     if search_index == 1:
 
         new_name = input("Enter_contact's new name : ")
@@ -200,30 +182,8 @@ def change_contact():  # vivod menu
     # print(*file_read().strip().split("\n"))
     print_data()
 
-    # problemi v etoy 4asti -
-    # posle vibora etix punktov upravlenie idet suda
-    # tut po planu mi izmenayem sostavlayuwue strok
-    # dla etogo
-    #   '2. Name\n'
-    #   '3. Surname\n'
-    #   '4. Patronymic\n'
-    #   '5. Address\n'
-    #   '6. Phone\n'
-
-    # spisok_kontaktov = file_read().strip().split("\n")
-    # # polu4ayu  spisok strok razdelenniy po perevodu stroki "\n" i ubirayem probeli
-    # print(spisok_kontaktov)
-    # print(type(spisok_kontaktov))
-
     # # vvodim iskomoe zna4eniye dla zameni
     # search_data = input("Enter search data : ")
-    # for kontakt in spisok_kontaktov:    # iwem stroku v spiske
-    #     for element in kontakt:         # iwem v  kajdoy stroke  spiska
-    #         # print(f'kontakt  {kontakt}')
-    #         element = kontakt.split(";")
-    #         # razdelayem stroku po ' ; ' - razdelitelu
-    #         # print(f'element[search_index]  {element[search_index]}')
-    #         print(f'element  {element}')
 
     # data=[spisok_kontaktov[i].split(";")[1] for i in spisok_kontaktov]
 
@@ -234,34 +194,6 @@ def change_contact():  # vivod menu
     # old_patronymic = spisok_kontaktov[contact_number_int-1].split(";")[3]
     # old_phone = spisok_kontaktov[contact_number_int-1].split(";")[4]
     # old_address = spisok_kontaktov[contact_number_int-1].split(";")[5]
-
-#                 if search_data in element[search_index]:  #
-#                     #   zdesiwem element s indeksom otsuda  i minus odin  -1->
-#                     # ->
-#                     #   '2. Name\n'
-#                     #   '3. Surname\n'
-#                     #   '4. Patronymic\n'
-#                     #   '5. Address\n'
-#                     #   '6. Phone\n'
-#                     #
-#                     print(f'element[search_index] {element[search_index]}')
-#                     #    pe4ataem naydenniy element
-
-#                     entered_data = input("Enter data to change : ")
-#                     # vvodim zna4enie dla zapisi vmesto naydennogo zna4eniya
-#                     element[search_index] = entered_data
-#                     # prisvaivaem vvedennoe zna4enie
-#                     print(spisok_kontaktov)
-#                 else:
-#                     print("wrong input")
-#                     break
-
-# # Zdes ne udayetsa zapisat zna4eniye
-
-# i vtoroe -
-# ya ispolzoval 2-voynoy cikl - on naxodit zna4eniye neskolko raz
-
-    # A takje problema s obratnoy sborkoy stroki v prevona4alniy vid i zapisi ee v fayl
 
     #         with open(f'accounts.txt', 'w', encoding='UTF-8') as accounts:
     #             accounts.write(
@@ -277,46 +209,196 @@ def change_contact():  # vivod menu
 def delete_contact():
 
     spisok_kontaktov = file_readlines()  # 4itaet fayl vozvrawaet Spisok Strok
-    print([spisok_kontaktov])
-    # print(*file_read().strip().split("\n"))
-    print_data()
-    print(f'len(spisok_kontaktov)  {len(spisok_kontaktov) }')
-    # vibor poradkovogo nomera kontakta
-    contact_number_int = int(input('Enter contact number u want to delete : '))
-    #     i perevod v 4islovoy  format
-    while contact_number_int not in (range(1, len(spisok_kontaktov)+1)):
-        print('Enter contact number u want to delete')
-        contact_number_int = int(input())
+    # print([spisok_kontaktov])
+    if len(spisok_kontaktov) == 0:
+        print("kontaktov net")
+    else:
 
-    print(spisok_kontaktov[contact_number_int-1])
+        # print(*file_read().strip().split("\n"))
+        print_data()
+        print(f'len(spisok_kontaktov)  {len(spisok_kontaktov) }')
+        # vibor poradkovogo nomera kontakta
+        contact_number_int = int(
+            input('Enter contact number u want to delete : '))
+        #     i perevod v 4islovoy  format
+        while contact_number_int not in (range(1, len(spisok_kontaktov)+1)):
+            print('Enter contact number u want to delete')
+            contact_number_int = int(input())
 
-    del spisok_kontaktov[contact_number_int-1]
+        print(spisok_kontaktov[contact_number_int-1])
 
-    spisok_kontaktov = [f'{i + 1};{spisok_kontaktov[i].split(";")[1]};'
-                        f'{spisok_kontaktov[i].split(";")[2]};'
-                        f'{spisok_kontaktov[i].split(";")[3]};'
-                        f'{spisok_kontaktov[i].split(";")[4]};'
-                        f'{spisok_kontaktov[i].split(";")[5]}'
-                        for i in range(len(spisok_kontaktov))]
+        del spisok_kontaktov[contact_number_int-1]
 
-    file_rewritelines(spisok_kontaktov)
-    print("Kontakt deleted")
-    print_data()
+        spisok_kontaktov = [f'{i + 1};{spisok_kontaktov[i].split(";")[1]};'
+                            f'{spisok_kontaktov[i].split(";")[2]};'
+                            f'{spisok_kontaktov[i].split(";")[3]};'
+                            f'{spisok_kontaktov[i].split(";")[4]};'
+                            f'{spisok_kontaktov[i].split(";")[5]}'
+                            for i in range(len(spisok_kontaktov))]
+
+        file_rewritelines(spisok_kontaktov)
+        print("Kontakt deleted")
+        print_data()
 
 
 # delete_contact()
 
 
+def filerowsnumber_filedata(input_file_name):
+
+    import os
+
+    file_names = []
+
+    for filename in os.listdir("."):
+        file_names.append(filename)
+
+    print(file_names)
+
+    source_file = input_file_name
+    # print(f'source_file  : {source_file}')
+
+    while source_file not in file_names:
+        source_file = str(input("Enter source text file : "))
+
+    print(f'source_file  : {source_file}')
+    print(f'source_file type  : {type(source_file)}')
+    # print("Select source file :")
+
+    with open(source_file, 'r', encoding='utf-8') as file:
+        source_file_data = file.readlines()
+
+    print(f'source_file_data  : {source_file_data}')
+    # print(data)
+
+    spisok_kontaktov = source_file_data  # 4itaet fayl vozvrawaet Spisok Strok
+
+    file_rows_number = len(source_file_data)
+
+    return source_file_data, file_rows_number, file_names
+
+
+#
+
+#
+
+#
+
 def copy_contact():
 
-    spisok_kontaktov = file_readlines()  # 4itaet fayl vozvrawaet Spisok Strok
-    print([spisok_kontaktov])
+    # logika
+    # opisanie
+    # kopirovanie stroki kontaka iz spiska iz odnogo fayla
+    # i dobavlenie ee v konec drugogo spiska drugogo fayla
+
+    # 0.pe4ataem spisok faylov
+    # 1.vivodim priglawenie - iz kakogo fayla xotite kopirovat
+    # 2.pe4ataem spisok kontaktov vibrannogo fayla
+    # 3.predlagayem vibrat kakoy kontakt xotite kopirovat
+    # 4.vivodim priglawenie - kuda xotite kopirovat
+    # 5.formatiruyem i zapisivayem dannie
+    #
+    #
+    #
+
+    import os
+
+    file_names = []
+
+    for filename in os.listdir("."):
+        file_names.append(filename)
+
+    print(file_names)
+
+    source_file = str(input("Enter source file : "))
+
+    spisok_kontaktov, rowscount, file_names = filerowsnumber_filedata(
+        source_file)
+
+    print(*file_names)
+
+    print(spisok_kontaktov)
+    print(rowscount)
+
+    # print(f'source_file  : {source_file}')
+
+    # while source_file not in file_names:
+    #     source_file = str(input("Enter source text file : "))
+
+    # print(f'source_file  : {source_file}')
+    # print(f'source_file type  : {type(source_file)}')
+    # # print("Select source file :")
+
+    # with open(source_file, 'r', encoding='utf-8') as file:
+    #     source_file_data = file.readlines()
+
+    # print(f'source_file_data  : {source_file_data}')
+    # # print(data)
+
+    # spisok_kontaktov = source_file_data  # 4itaet fayl vozvrawaet Spisok Strok
+    # print([spisok_kontaktov])
     # print(*file_read().strip().split("\n"))
     print_data()
     print(f'len(spisok_kontaktov)  {len(spisok_kontaktov) }')
-    # vibor poradkovogo nomera kontakta
-    contact_number_int = int(input('Enter contact number u want to delete : '))
+
+    contact_number_int = int(input('Enter contact number u want to copy : '))-1
+    while contact_number_int < 0 or contact_number_int > len(spisok_kontaktov):
+        # vibor poradkovogo nomera kontakta
+        contact_number_int = int(
+            input('Enter contact number u want to copy : '))-1
     #     i perevod v 4islovoy  format
+
+    print(spisok_kontaktov[contact_number_int].split(";")[1])
+
+    print(spisok_kontaktov[contact_number_int])
+
+    print(file_names)
+
+    destination_file = input("Enter destination file : ")
+
+    destination_file_data, destination_file_rows_number, file_names = filerowsnumber_filedata(
+        destination_file)
+
+    # while destination_file not in file_names:
+
+    #     destination_file = input("Enter destination file : ")
+
+    # with open(destination_file, 'r', encoding='utf-8') as file:
+    #     destination_file_data = file.readlines()
+
+    print(f'destination_file_data  : {destination_file_data}')
+
+    destination_row_number = destination_file_rows_number+1
+
+    print(destination_row_number)
+
+    #
+    #
+    #
+
+    old_name = spisok_kontaktov[contact_number_int].split(";")[1].rstrip()
+    old_surname = spisok_kontaktov[contact_number_int].split(";")[2].rstrip()
+    old_patronymic = spisok_kontaktov[contact_number_int].split(";")[
+        3].rstrip()
+    old_phone = spisok_kontaktov[contact_number_int].split(";")[4].rstrip()
+    old_Address = spisok_kontaktov[contact_number_int].split(";")[5].rstrip()
+
+    print(spisok_kontaktov[contact_number_int].split(";")[1])
+    print(spisok_kontaktov[contact_number_int].split(";")[1])
+    print(spisok_kontaktov[contact_number_int].split(";")[2])
+    print(spisok_kontaktov[contact_number_int].split(";")[3])
+    print(spisok_kontaktov[contact_number_int].split(";")[4])
+    print(spisok_kontaktov[contact_number_int].split(";")[5])
+
+    new_contact_data = f'{destination_row_number};{old_name};{old_surname};{old_patronymic};{old_phone};{old_Address}\n'
+
+    print(new_contact_data)
+
+    with open(destination_file, 'a', encoding='UTF-8') as accounts:
+        accounts.write(new_contact_data)
+
+
+copy_contact()
 
 
 ###
@@ -326,16 +408,18 @@ def copy_contact():
 def interface():
     file_append()
     user_data = ''
-    while user_data != '5':
+    while user_data != '7':
         print('Select ur choice : \n'
               '1. Print data\n'
               '2. Search data\n'
               '3. Add data\n'
               '4. Copy data\n'
-              '5. Exit\n'
+              '5. Delete data\n'
+              '6. Change contact\n'
+              '7. Exit\n'
               )
         user_data = input("Enter operation number : ")
-        while user_data not in ('1', '2', '3', '4', '5'):
+        while user_data not in ('1', '2', '3', '4', '5', '6', '7'):
             user_data = input("Enter operation number : ")
         match user_data:
             case '1':
@@ -345,9 +429,12 @@ def interface():
             case '3':
                 input_data()
             case '4':
-                print('\nthis option is under construction\n')
-                pass
+                copy_contact()
             case '5':
+                delete_contact()
+            case '6':
+                change_contact()
+            case '7':
                 print('Game over')
 
 
