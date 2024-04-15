@@ -4,4 +4,4 @@
 4;Miri;Miriev;Mirievich;555;Barselona
 5;Lama;Lamaeva;Lamaevna;101010;Leningrad
 6;Agil;Agilov;Agilovi4;777;Zarupinsk
-7;Navara;Navarova;Navarovna;999;Navara
+7;Navara;Navarova;Navarovna;000;Navara

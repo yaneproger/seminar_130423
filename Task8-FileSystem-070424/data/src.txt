@@ -8,4 +8,3 @@
 8;Namiq;Namiqov;Namiqovich;999;Balaken
 9;Lama;Lamaeva;Lamaevna;101010;Leningrad
 10;Nava;Navaev;Navaevi4;333;Navaiw
-11;Lama;Lamaeva;Lamaevna;101010;Leningrad
