@@ -111,6 +111,7 @@ print(datetime.MINYEAR)
 
 # time
 
+
 """
 
 
@@ -270,7 +271,7 @@ print(s)
 # else:
 #     print(number, (' нечетное число'))
 
-    # else:
+# else:
 
 #     print(number, ('четное число'))
 
